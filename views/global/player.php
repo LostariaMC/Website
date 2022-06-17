@@ -1,7 +1,7 @@
 <div class="container">
-    <div class="row pt-5">
+    <div class="row">
         <?php
-        echo '<h1>Bonjour ' .$player. '</h1>';
+        echo '<h1>Statistiques • ' .$playerUuid. '</h1>';
         ?>
     </div>
 </div>

@@ -12,8 +12,8 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container-fluid">
         <?php
-        if (isset($_GET['name'])) {
-            echo '<a class="navbar-brand" href="javascript: history.go(-1)">← Retour</a>';
+        if (isset($_GET['uuid'])) {
+            echo '<a class="navbar-brand" href="./">← Retour</a>';
         } else {
             echo '<a class="navbar-brand" href="./">Lostaria</a>';
         }
