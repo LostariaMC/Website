@@ -3,6 +3,7 @@
 namespace controllers;
 
 use controllers\base\Web;
+use utils\MojangUtils;
 
 class Main extends Web {
 
@@ -50,11 +51,7 @@ class Main extends Web {
         }
         $query = strip_tags($_GET['q']);
 
-        $queryMojang = "https://api.mojang.com/users/profiles/minecraft/" .$query;
-
-        $response = file_get_contents($queryMojang);
-        $response = json_decode($response, true);
-        $targetUuid = $response['id'];
+        $targetUuid = MojangUtils::getUuid($query);
         if($targetUuid == ""){
             $_POST['error'] = "Le joueur spécifié n'a pas été trouvé";
             $this->home();
