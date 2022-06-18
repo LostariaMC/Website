@@ -56,7 +56,7 @@ class Main extends Web {
             $_POST['error'] = "Le joueur spécifié n'a pas été trouvé";
             $this->home();
         }else{
-            header('Location: ./player?uuid=' .$targetUuid);
+            header('Location: ./player?uuid=' .MojangUtils::getDashesUuid($targetUuid));
         }
 
     }
