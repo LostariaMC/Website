@@ -4,7 +4,7 @@
 
         <?php
         if(isset($error) && $error == true){
-            echo '<div style="text-align: center;" class="alert alert-danger">Une erreur est survenue</div>';
+            echo '<div style="text-align: center;" class="alert alert-danger">' .strip_tags($_POST['error']). '</div>';
         }
         ?>
 

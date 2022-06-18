@@ -18,7 +18,7 @@ class Main extends Web {
             "f174ad80-7008-4d6c-82d3-f635a49a97c8"
         );
 
-        $error = true;
+        $error = false;
         if(isset($_POST['error'])){
             $error = true;
         }
@@ -57,7 +57,7 @@ class Main extends Web {
         $targetUuid = $response['id'];
         if($targetUuid == ""){
             $_POST['error'] = "Le joueur spécifié n'a pas été trouvé";
-            $this->redirect("./");
+            $this->home();
         }else{
             header('Location: ./player?uuid=' .$targetUuid);
         }
