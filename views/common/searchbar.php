@@ -2,6 +2,10 @@
 
     <div class="row pt-5">
 
+        <div class="col alert alert-info" style="margin-right: 30%; margin-left: 30%; text-align: center;" role="alert">
+            Site en cours de développement !
+        </div>
+
         <?php
         if(isset($error) && $error == true){
             echo '<div style="text-align: center;" class="alert alert-danger">' .strip_tags($_POST['error']). '</div>';
