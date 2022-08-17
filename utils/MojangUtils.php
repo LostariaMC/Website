@@ -12,6 +12,14 @@ class MojangUtils {
         return $targetUuid;
     }
 
+    static function getName($uuid){
+        $query = "https://api.mojang.com/user/profile/" .$uuid;
+        $response = file_get_contents($query);
+        $response = json_decode($response, true);
+        $targetUuid = $response['name'];
+        return $targetUuid;
+    }
+
     static function getDashesUuid($uuid){
         $uuid = str_replace("-", "", $uuid);
         $chars = [];

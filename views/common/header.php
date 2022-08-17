@@ -6,6 +6,19 @@
     <title>Lostaria • Statistiques</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
     <link rel="stylesheet" href="./public/style/main.css">
+
+    <link rel="icon" type="image/png" href="./public/images/LostariaLogo.png">
+    <meta property="og:image" content="./public/images/LostariaLogo.png">
+
+    <meta name="theme-color" content="#6477e6">
+
+    <meta property="site_name" content="Lostaria">
+    <meta property="og:site_name" content="Lostaria">
+
+    <meta name="description" content="Découvrez les statistiques des joueurs du serveur Minecraft Lostaria">
+    <meta name="og:description" content="Découvrez les statistiques des joueurs du serveur Minecraft Lostaria">
+
+    <meta name="keywords" content="Lostaria, Minecraft, Serveur, Statistiques">
 </head>
 
 <body class="<?= isset($_GET['id']) ? 'brick' : '' ?>">
@@ -20,7 +33,7 @@
         ?>
 
         <ul class="navbar-nav flex-row ml-md-auto d-none d-md-flex flex-grow justify-content-end flex-grow p-2">
-            <a href="https://jenkins.lostaria.fr" target="_blank" class="btn btn-outline-light" style="margin-left: 10px;">Jenkins</a>
+            <a href="http://discord.lostaria.fr" target="_blank" class="btn btn-outline-light" style="margin-left: 10px;">Discord</a>
             <a href="https://github.com/LostariaMC" target="_blank" class="btn btn-outline-light" style="margin-left: 10px;">GitHub</a>
         </ul>
     </div>

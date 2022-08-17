@@ -2,29 +2,25 @@
 
     <div class="row pt-5">
 
-        <div class="col alert alert-info" style="margin-right: 30%; margin-left: 30%; text-align: center;" role="alert">
-            Site en cours de développement !
-        </div>
-
         <?php
         if(isset($error) && $error == true){
-            echo '<div style="text-align: center;" class="alert alert-danger">' .strip_tags($_POST['error']). '</div>';
+            echo '<div class="alert alert-danger" style="text-align: center;">' .strip_tags($_POST['error']). '</div>';
         }
         ?>
 
-        <h1>Entrez votre pseudo</h1>
+        <h1>Rechercher un joueur</h1>
 
         <form method="GET" action="./search">
             <div class="form-floating mb-3">
                 <input type="text" class="form-control" name="q" required="required" placeholder="pseudo">
-                <label for="floatingInput">Votre pseudo</label>
+                <label for="floatingInput">Pseudo</label>
             </div>
             <div class="col-12">
                 <button class="btn btn-primary" type="submit">Rechercher</button>
             </div>
         </form>
     </div>
-    <div style="margin: 3%">
+    <div style="margin: 30px">
         <hr style="height: 2px; color: #606060; background-color: #606060; width: 80%; border: none; margin: auto;">
     </div>
 </div>
