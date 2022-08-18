@@ -3,9 +3,11 @@
 namespace models\base;
 
 
+use Redis;
+
 class Database
 {
-    static function connect()
+    /*static function connect()
     {
         $config = include("configs.php");
         $pdo = new \PDO ($config["DB_DSN"], $config["DB_USER"], $config["DB_PASSWORD"]);
@@ -17,5 +19,16 @@ class Database
         }
 
         return $pdo;
+    }*/
+
+    static function connect()
+    {
+        $config = include("configs.php");
+        $redis = new Redis() or die("Cannot load Redis module in PHP.");
+        $redis->connect($config['DB_SERVER'], $config['DB_PORT']);
+
+        $redis->auth($config['DB_PASSWORD']);
+
+        return $redis;
     }
 }

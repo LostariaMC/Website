@@ -54,13 +54,13 @@ class $targetName extends Web
         $content = "<?php
 namespace models;
 
-use models\base\SQL;
+use models\base\RedisBase;
 
-class $targetName extends SQL
+class $targetName extends RedisBase
 {
     public function __construct()
     {
-        parent::__construct('votre-table', 'cle-de-votre-table');
+        parent::__construct();
     }
 }";
 
