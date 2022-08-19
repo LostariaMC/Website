@@ -5,7 +5,7 @@ namespace controllers\base;
 class Web implements IBase
 {
 
-    function header()
+    function header($title = "", $keywords = "")
     {
         include_once("./views/common/header.php");
     }

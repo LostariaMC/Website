@@ -9,5 +9,6 @@ namespace models\base;
 interface IDatabase
 {
     public function getOne($key);
+    public function keyExist($key);
 
 }

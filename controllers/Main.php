@@ -43,7 +43,16 @@ class Main extends Web {
 
         $playerUuid = strip_tags($_GET['uuid']);
 
-        $this->header();
+        $registered = $this->redisModel->keyExist("redisplayer:". $playerUuid);
+        if(!$registered){
+            $_POST['error'] = "Le joueur ne s'est jamais connecté sur Lostaria, tu devrais l'inviter 😉";
+            $this->home();
+            return;
+        }
+
+        $playerName = MojangUtils::getName($playerUuid);
+
+        $this->header("Profil de ". $playerName ." • Lostaria", $playerName);
         include("views/common/searchbar.php");
         include("views/global/player.php");
         $this->footer();
@@ -58,7 +67,7 @@ class Main extends Web {
 
         $targetUuid = MojangUtils::getUuid($query);
         if($targetUuid == ""){
-            $_POST['error'] = "Le joueur spécifié n'a pas été trouvé";
+            $_POST['error'] = "Aucun compte Minecraft n'est associé à ce joueur";
             $this->home();
         }else{
             header('Location: ./player?uuid=' .MojangUtils::getDashesUuid($targetUuid));

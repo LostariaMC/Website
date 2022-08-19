@@ -18,6 +18,13 @@ class RedisBase implements IDatabase
 
     public function getOne($key)
     {
-        // TODO: Implement getOne() method.
+        $response = $this->redis->get($key);
+        return $response;
+    }
+
+    public function keyExist($key)
+    {
+        $response = $this->redis->exists($key);
+        return $response;
     }
 }

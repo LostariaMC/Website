@@ -1,3 +1,27 @@
+<div class="toast-container position-fixed bottom-0 end-0 p-3">
+    <div id="liveToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+        <div class="toast-header">
+            <img src="./public/images/LostariaLogo.png" height="20" width="20" class="rounded me-2" alt="Lostaria">
+            <strong class="me-auto">Lostaria - Information</strong>
+            <small></small>
+            <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+        </div>
+        <div class="toast-body">
+            Nous utilisons des cookies pour nous permettre de déterminer le nombre de visites sur notre site.
+            Toutes ces informations sont anonymisées et stockées de manière limitée.
+        </div>
+    </div>
+</div>
+
+<script>
+
+    $(function() {
+        const toastLiveExample = document.getElementById('liveToast')
+        const toast = new bootstrap.Toast(toastLiveExample)
+        toast.show()
+    });
+</script>
+
 <div class="container">
 
     <h3 style="margin: 20px">Membres de l'équipe :</h3>

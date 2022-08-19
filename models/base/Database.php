@@ -29,6 +29,8 @@ class Database
 
         $redis->auth($config['DB_PASSWORD']);
 
+        $redis->select(1);
+
         return $redis;
     }
 }
