@@ -41,16 +41,18 @@
             $competences = $competences . "<span style='margin-right: 3px' class=\"badge rounded-pill text-bg-primary text-light\">". $c ."</span>";
         }
 
+        $staffName = \utils\MojangUtils::getName($p[0]);
+
         echo '
             <div class="col">
                 <div class="col-sm-12 p-3">
                     <div class="card card-hover">
                         <div class="card-body d-flex">
                             <div class="p-3">
-                                <img class="preview-image" src="'. \utils\HeadUtils::getHeadLink($p[0]) .'/100">
+                                <img class="preview-image" src="'. \utils\HeadUtils::getHeadLink($p[0]) .'/100" alt="'. $staffName .' avatar">
                             </div>
                             <div class="p-3 flex-grow-1">
-                                <h5 class="mb-1 pb-0">'. \utils\MojangUtils::getName($p[0]) .'</h5>
+                                <h5 class="mb-1 pb-0">'. $staffName .'</h5>
                                 '. $competences .'<br>
                                 <a style="margin-top: 20px;" href="./player?uuid='. $p[0] .'" class="btn btn-outline-primary">Voir le profil →</a>
                             </div>
