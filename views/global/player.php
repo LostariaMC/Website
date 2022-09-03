@@ -1,8 +1,10 @@
 <div class="container">
-    <div style="text-align: center; margin-left: 20%; margin-right: 20%;">
-        <div class="alert alert-warning" role="alert">
-            Cette page est en cours de développement !<br>
-            En attendant, rejoignez-nous sur notre <a href="http://discord.lostaria.fr" target="_blank" class="alert-link">Discord</a>
+    <div class="col-lg-7 col-md-8 col-sm-12 col-xs-12" style="margin: 26px; padding-right: 26px; display: inline-block">
+        <div>
+            <img class="preview-image" src="<?= \utils\HeadUtils::getHeadLink($playerUuid) ?>/100" alt="<?= $playerName ?> avatar">
+        </div>
+        <div>
+            <h1><?= $playerName ?></h1>
         </div>
     </div>
 </div>

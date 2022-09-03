@@ -3,6 +3,7 @@
 namespace controllers;
 
 use controllers\base\Web;
+use entities\LostariaPlayer;
 use models\RedisModel;
 use utils\MojangUtils;
 
@@ -51,6 +52,9 @@ class Main extends Web {
         }
 
         $playerName = MojangUtils::getName($playerUuid);
+
+        $redisPlayer = $this->redisModel->getOne("redisplayer:". $playerUuid);
+        $player = new LostariaPlayer(json_decode($redisPlayer, true));
 
         $this->header("Profil de ". $playerName ." • Lostaria", $playerName);
         include("views/common/searchbar.php");
