@@ -54,7 +54,8 @@ class Main extends Web {
         $playerName = MojangUtils::getName($playerUuid);
 
         $redisPlayer = $this->redisModel->getOne("redisplayer:". $playerUuid);
-        $player = new LostariaPlayer(json_decode($redisPlayer, true));
+        $playerObj = json_decode($redisPlayer, true);
+        $player = new LostariaPlayer($playerObj);
 
         $this->header("Profil de ". $playerName ." • Lostaria", $playerName);
         include("views/common/searchbar.php");

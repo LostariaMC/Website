@@ -24,4 +24,8 @@ class LostariaPlayer {
         return $this->redisPlayer['tickets'];
     }
 
+    public function getBadges(){
+        return $this->redisPlayer['badges'][1];
+    }
+
 }
