@@ -17,8 +17,7 @@ class LostariaServerUtils
 
 	public static function getOnlinePlayers()
 	{
-		//$filename = "/srv/MinecraftServer/commons/servers/Lostaria.yml";
-		$filename = "C:/Users/LOMBA/Desktop/Lostaria.yml";
+		$filename = "/srv/MinecraftServer/commons/servers/Lostaria.yml";
 		$file = fopen($filename, "r");
 		$filetext = fread($file, filesize($filename));
 		fclose($file);
