@@ -1,13 +1,14 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <?php
-    if($title == ""){
+    if ($title == "") {
         echo '<title>Lostaria • Statistiques</title>';
-    }else{
-        echo '<title>'. $title .'</title>';
+    } else {
+        echo '<title>' . $title . '</title>';
     }
     ?>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
@@ -26,13 +27,16 @@
     <meta name="description" content="Découvrez les statistiques des joueurs du serveur Minecraft Lostaria">
     <meta name="og:description" content="Découvrez les statistiques des joueurs du serveur Minecraft Lostaria">
 
-    <meta name="keywords" content="Lostaria, Minecraft, Serveur, Statistiques<?= ($keywords == "" ? "" : ", ". $keywords) ?>">
+    <meta name="keywords" content="Lostaria, Minecraft, Serveur, Statistiques<?= ($keywords == "" ? "" : ", " . $keywords) ?>">
 
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-DQH14YJE51"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
         gtag('js', new Date());
 
         gtag('config', 'G-DQH14YJE51');
@@ -41,19 +45,25 @@
 </head>
 
 <body class="<?= isset($_GET['id']) ? 'brick' : '' ?>">
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <div class="container-fluid">
-        <?php
-        if (isset($_GET['uuid'])) {
-            echo '<a class="navbar-brand" href="./">← Retour</a>';
-        } else {
-            echo '<a class="navbar-brand" href="./">Lostaria</a>';
-        }
-        ?>
-
-        <ul class="navbar-nav flex-row ml-md-auto d-none d-md-flex flex-grow justify-content-end flex-grow p-2">
-            <a href="http://discord.lostaria.fr" target="_blank" class="btn btn-outline-light" style="margin-left: 10px;">Discord</a>
-            <a href="https://github.com/LostariaMC" target="_blank" class="btn btn-outline-light" style="margin-left: 10px;">GitHub</a>
-        </ul>
-    </div>
-</nav>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <?php
+            if (isset($_GET['uuid'])) {
+                echo '<a class="navbar-brand" href="./">← Retour</a>';
+            } else {
+                echo '<a class="navbar-brand" href="./">Lostaria</a>';
+            }
+            if ($_SERVER['HTTP_HOST'] != 'localhost') {
+                echo '<p style="font-size: 1rem; color: white; padding-top: 1rem;">
+            Joueurs connectés : ' . \utils\LostariaServerUtils::getOnlinePlayersCount() . '</p>';
+            }
+            else {
+                echo '<p style="font-size: 1rem; color: white; padding-top: 1rem;">-- Mode Développement --</p>';
+            }
+            ?>
+            <ul class="navbar-nav flex-row ml-md-auto d-none d-md-flex flex-grow justify-content-end flex-grow p-2">
+                <a href="http://discord.lostaria.fr" target="_blank" class="btn btn-outline-light" style="margin-left: 10px;">Discord</a>
+                <a href="https://github.com/LostariaMC" target="_blank" class="btn btn-outline-light" style="margin-left: 10px;">GitHub</a>
+            </ul>
+        </div>
+    </nav>
