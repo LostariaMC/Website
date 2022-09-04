@@ -64,7 +64,34 @@
                             <h3 class="h2">
                                 Oups, cette page n'existe pas !
                             </h3>
-                            <p style="font-style: italic;">Les dinosaures ne sont pas tous morts</p>
+                            <?php
+                            $quotes = [];
+                            array_push($quotes, "Les dinosaures ne sont pas tous morts");
+                            array_push($quotes, "J'ai pas compris Géant Casino");
+                            array_push($quotes, "Je fais du poney sur une patte");
+                            array_push($quotes, "Les roses sont crémeuses");
+                            array_push($quotes, "L'ampoule brille, mais pas tout le temps..");
+                            array_push($quotes, "Les dinosaures mangent de l'or");
+                            array_push($quotes, "Les poulets sont de lointains descendants des dinosaures");
+                            array_push($quotes, "Elle était si belle la poubelle");
+                            array_push($quotes, "Les violoncelles s'attablèrent et firent du repas un avion");
+                            array_push($quotes, "Le clou souffre autant que le trou");
+                            array_push($quotes, "Une partie des esperluettes sont généralement indisponibles, quoique nécessaires");
+                            array_push($quotes, "Les choux-fleurs sont en chaleur");
+                            array_push($quotes, "Les abricots sont très beau");
+                            array_push($quotes, "Les espagnolettes sont malades, on se demande pourquoi..");
+                            array_push($quotes, "Jardiner, c'est comme faire du vélo");
+                            array_push($quotes, "Comme un puma dans l'antarctique des éléphants");
+                            array_push($quotes, "Les échalottes sont patriotes");
+                            array_push($quotes, "L'utilisation abusive de la souris est sanctionnée");
+                            array_push($quotes, "Qui va la pêche à l'eau car la fin s'y casse");
+                            array_push($quotes, "Les tortues inanimées se trouvent bien embêtées, et par géo-localisation");
+                            array_push($quotes, "Si c'est cette fonte, rèze");
+                            array_push($quotes, "Qu'est ce qu'un idiomatique ?");
+                            array_push($quotes, "Un semblant de tartine ne fait pas de mal à un miroir, annonça-t-il");
+
+                            echo '<p style="font-style: italic;">'. $quotes[array_rand($quotes, 1)] .'</p>';
+                            ?>
                             <a href="./" class="link_404">Retour</a>
                         </div>
                     </div>
