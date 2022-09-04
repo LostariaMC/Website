@@ -65,7 +65,7 @@
         color: #ffc100;
     }
     .mccolor-gold{
-        color: #FFAA00;
+        color: #e97420;
     }
     .mccolor-aqua{
         color: #27bfbf;
