@@ -14,7 +14,6 @@
 </div>
 
 <script>
-
     $(function() {
         const toastLiveExample = document.getElementById('liveToast')
         const toast = new bootstrap.Toast(toastLiveExample)
@@ -28,17 +27,17 @@
     <?php
     $i = 0;
     foreach ($staffMembers as $p) {
-        if($i >= 2){
+        if ($i >= 2) {
             echo '</div>';
             $i = 0;
         }
-        if($i == 0) {
+        if ($i == 0) {
             echo '<div class="row">';
         }
 
         $competences = "";
-        foreach ($p[1] as $c){
-            $competences = $competences . "<span style='margin-right: 3px' class=\"badge rounded-pill text-bg-primary text-light\">". $c ."</span>";
+        foreach ($p[1] as $c) {
+            $competences = $competences . "<span style='margin-right: 3px' class=\"badge rounded-pill text-bg-primary text-light\">" . $c . "</span>";
         }
 
         $staffName = \utils\MojangUtils::getName($p[0]);
@@ -49,12 +48,12 @@
                     <div class="card card-hover">
                         <div class="card-body d-flex">
                             <div class="p-3">
-                                <img class="preview-image" src="'. \utils\HeadUtils::getHeadLink($p[0]) .'/100" alt="'. $staffName .' avatar">
+                                <img class="preview-image" src="' . \utils\HeadUtils::getHeadLink($p[0]) . '/100" alt="' . $staffName . ' avatar">
                             </div>
                             <div class="p-3 flex-grow-1">
-                                <h5 class="mb-1 pb-0">'. $staffName .'</h5>
-                                '. $competences .'<br>
-                                <a style="margin-top: 20px;" href="./player?uuid='. $p[0] .'" class="btn btn-outline-primary">Voir le profil →</a>
+                                <h5 class="mb-1 pb-0">' . $staffName . '</h5>
+                                ' . $competences . '<br>
+                                <a style="margin-top: 20px;" href="./player?uuid=' . $p[0] . '" class="btn btn-outline-primary">Voir le profil →</a>
                             </div>
                         </div>
                     </div>
@@ -63,7 +62,7 @@
             ';
         $i++;
     }
-    if($i >= 2){
+    if ($i >= 2) {
         echo '</div>';
     }
     ?>
