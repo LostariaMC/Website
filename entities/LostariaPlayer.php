@@ -16,6 +16,14 @@ class LostariaPlayer {
         return $this->redisPlayer['points'];
     }
 
+    public function getMaxPoints(){
+        $nextRank = $this->lostariaRank->getNextRank($this->getRank());
+        if($nextRank == "~"){
+            return 10000;
+        }
+        return $this->lostariaRank->ranks[$nextRank];
+    }
+
     public function getRank(){
         return $this->lostariaRank->getFromPoints($this->getPoints());
     }

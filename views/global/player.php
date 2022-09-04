@@ -10,7 +10,7 @@
             <div class="p-3">
                 <img class="preview-image" src="<?= \utils\HeadUtils::getHeadLink($playerUuid) ?>/120" alt="<?= $playerName ?> avatar">
             </div>
-            <div class="p-3 flex-grow-1">
+            <div class="flex-grow-1" style="margin-left: 15px;">
                 <?php
                 $rank = $player->getRank();
                 $color = "";
@@ -31,21 +31,28 @@
                 $badges = $player->getBadges();
                 $stylePlayerName = "";
                 if(count($badges) > 0){
-                    $stylePlayerName = "margin-bottom: 10px; margin-top: 15px;";
+                    $stylePlayerName = "margin-bottom: 5px; margin-top: 5px;";
                 }else{
-                    $stylePlayerName = "margin-top: 33px;";
+                    $stylePlayerName = "margin-bottom: 5px; margin-top: 35px;";
                 }
                 echo '<h1 style="'. $stylePlayerName .'" class="pb-0 '. $color .'">'. $player->getRank() . ' ' . $playerName .'</h1>';
 
+                echo '<span>Expérience </span><span class="badge text-bg-success">'. $player->getPoints() .' / '. $player->getMaxPoints() .'</span>';
+
+                if(count($badges) > 0){
+                    echo '<div style="margin-top: 5px;">
+                    <hr style="height: 2px; margin-right: 60%; color: #606060; background-color: #606060; border: none;">';
+                }
+
                 foreach ($badges as $badge){
                     if($badge == "Responsable"){
-                        echo '<span style="margin-right: 5px" class="badge rounded-pill text-bg-warning">Responsable ✰</span>';
+                        echo '<span style="margin-right: 5px; margin-top: 5px;" class="badge rounded-pill text-bg-warning">Responsable ✰</span>';
                     }
                     if($badge == "Donateur"){
-                        echo '<span style="margin-right: 5px" class="badge rounded-pill text-bg-danger text-light">Donateur ❤</span>';
+                        echo '<span style="margin-right: 5px; margin-top: 5px;" class="badge rounded-pill text-bg-danger text-light">Donateur ❤</span>';
                     }
                     if($badge == "Président"){
-                        echo '<span style="margin-right: 5px" class="badge rounded-pill text-bg-info text-light">Président ✪</span>';
+                        echo '<span style="margin-right: 5px; margin-top: 5px;" class="badge rounded-pill text-bg-info text-light">Président ✪</span>';
                     }
                 }
                 ?>
@@ -55,13 +62,13 @@
 </div>
 <style>
     .mccolor-yellow{
-        color: #FFFF55;
+        color: #ffc100;
     }
     .mccolor-gold{
         color: #FFAA00;
     }
     .mccolor-aqua{
-        color: #55FFFF;
+        color: #27bfbf;
     }
     .mccolor-lightpurple{
         color: #FF55FF;
