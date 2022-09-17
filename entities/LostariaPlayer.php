@@ -36,4 +36,12 @@ class LostariaPlayer {
         return $this->redisPlayer['badges'][1];
     }
 
+    public function getLastConnection(){
+        return $this->redisPlayer['lastConnection'];
+    }
+
+    public function getFirstConnection(){
+        return $this->redisPlayer['firstConnection'];
+    }
+
 }

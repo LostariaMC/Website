@@ -1,3 +1,7 @@
+.center{
+    text-align: center;
+}
+
 .frame {
     height: 320px;
     width: max-content;

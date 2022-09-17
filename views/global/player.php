@@ -59,6 +59,51 @@
             </div>
         </div>
     </div>
+    <div style="margin-top: 50px;" class="row">
+        <div style="margin-top: 30px;" class="col-md-8">
+            <h4 class="page-header">Statistiques</h4>
+        </div>
+        <div style="margin-top: 30px;" class="col-md-4">
+            <h4 class="page-header">Informations</h4>
+            <div style="margin-left: 15px;">
+                <?php
+                date_default_timezone_set("Europe/Paris");
+                $lastConnectionSeconds = $player->getLastConnection() / 1000;
+                $lastConnectionTimeInput = date('Y-m-d\TH:i:s', $lastConnectionSeconds);
+                $lastConnectionTime = new DateTime($lastConnectionTimeInput);
+                $nowTimeInput = date('Y-m-d\TH:i:s');
+                $nowTime = new DateTime($nowTimeInput);
+                $lastConnectionDiff = $nowTime->diff($lastConnectionTime);
+                $lastConnectionStr = "Il y a ";
+
+                if($lastConnectionDiff->y == 0){
+                    if($lastConnectionDiff->m == 0){
+                        if($lastConnectionDiff->days == 0){
+                            if($lastConnectionDiff->h == 0){
+                                $lastConnectionStr = $lastConnectionStr. $lastConnectionDiff->i .' minute'. ($lastConnectionDiff->i > 1 ? "s" : "");
+                            }else{
+                                $lastConnectionStr = $lastConnectionStr. $lastConnectionDiff->h .' heure'. ($lastConnectionDiff->h > 1 ? "s" : "");
+                            }
+                        }else{
+                            $lastConnectionStr = $lastConnectionStr. $lastConnectionDiff->days .' jour'. ($lastConnectionDiff->days > 1 ? "s" : "");
+                        }
+                    }else{
+                        $lastConnectionStr = $lastConnectionStr. $lastConnectionDiff->m .' mois';
+                    }
+                }else{
+                    $lastConnectionStr = $lastConnectionStr. $lastConnectionDiff->y .' an'. ($lastConnectionDiff->y > 1 ? "s" : "");
+                }
+
+                $firstConnectionSeconds = $player->getFirstConnection() / 1000;
+                $firstConnectionStr = \utils\DateUtils::convertMillisToDateStr($firstConnectionSeconds);
+
+                ?>
+                <p><i class="uil uil-angle-right-b"></i> Dernière connexion <span class="badge text-bg-danger"><?= $lastConnectionStr; ?></span></p>
+                <p><i class="uil uil-angle-right-b"></i> Inscription <span class="badge text-bg-info text-light"><?= $firstConnectionStr; ?></span></p>
+                <p><i class="uil uil-angle-right-b"></i> Tickets <span class="badge text-bg-success"><?= $player->getTickets(); ?></span></p>
+            </div>
+        </div>
+    </div>
 </div>
 <style>
     .mccolor-yellow{
@@ -73,4 +118,11 @@
     .mccolor-lightpurple{
         color: #FF55FF;
     }
+
+    .page-header{
+        border-bottom: 1px solid #eee;
+        padding-bottom: 10px;
+        margin-bottom: 15px;
+    }
+
 </style>
