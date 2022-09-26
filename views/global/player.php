@@ -62,6 +62,47 @@
     <div style="margin-top: 50px;" class="row">
         <div style="margin-top: 30px;" class="col-md-8">
             <h4 class="page-header">Statistiques</h4>
+            <div class="row">
+                <?php
+                $gamesCards = "";
+                foreach ($gameStats->getGames() as $gameId => $gameName){
+                    $gamesCards = $gamesCards. '<div class="col-lg-4 col-md-6 col-sm-4 col-xs-12"><div class="card" style="width: 16rem; margin-bottom: 20px;"><div class="card-body">';
+                    $gamesCards = $gamesCards. '<h5 class="card-title">'. $gameName .'</h5>';
+                    if(!$gameStats->hasPlay($gameId) && !$gameStats->hasPlay($gameId, "host")){
+                        $gamesCards = $gamesCards. '<p class="card-text">Aucune partie jouée</p>';
+                    }else{
+                        $gamesCards = $gamesCards. '<h6 class="card-subtitle mb-2 text-muted">Classic</h6>';
+                        if(!$gameStats->hasPlay($gameId)){
+                            $gamesCards = $gamesCards. '<p class="card-text">Aucune partie jouée</p>';
+                        }else{
+                            $stats = $gameStats->getStats($gameId);
+                            $gamesCards = $gamesCards. '<p class="card-text">';
+                            foreach ($stats as $statId => $statName){
+                                $statValue = $gameStats->getStat($gameId, "classic", $statId);
+                                //$gamesCards = $gamesCards. '<div class="row"><div class="col" style="font-size: 15px;">'. $statName .'</div><div class="col" style="text-align: right; font-size: 15px;"><span class="badge text-bg-success">'. $statValue .'</span></div></div>';
+                                $gamesCards = $gamesCards. '<div>'. $statName .' <b style="float: right;"><span class="badge text-bg-success">'. $statValue .'</span></b></div>';
+                            }
+                            $gamesCards = $gamesCards. '</p>';
+                        }
+                        $gamesCards = $gamesCards. '<h6 class="card-subtitle mb-2 text-muted" style="margin-top: 30px;">Host</h6>';
+                        if(!$gameStats->hasPlay($gameId, "host")){
+                            $gamesCards = $gamesCards. '<p class="card-text">Aucune partie jouée</p>';
+                        }else{
+                            $stats = $gameStats->getStats($gameId);
+                            $gamesCards = $gamesCards. '<p class="card-text">';
+                            foreach ($stats as $statId => $statName){
+                                $statValue = $gameStats->getStat($gameId, "host", $statId);
+                                //$gamesCards = $gamesCards. '<div class="row"><div class="col" style="font-size: 15px;">'. $statName .'</div><div class="col" style="text-align: right; font-size: 15px;"><span class="badge text-bg-success">'. $statValue .'</span></div></div>';
+                                $gamesCards = $gamesCards. '<div>'. $statName .' <b style="float: right;"><span class="badge text-bg-success">'. $statValue .'</span></b></div>';
+                            }
+                            $gamesCards = $gamesCards. '</p>';
+                        }
+                    }
+                    $gamesCards = $gamesCards. '</div></div></div>';
+                }
+                echo $gamesCards;
+                ?>
+            </div>
         </div>
         <div style="margin-top: 30px;" class="col-md-4">
             <h4 class="page-header">Informations</h4>

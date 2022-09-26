@@ -3,6 +3,7 @@
 namespace controllers;
 
 use controllers\base\Web;
+use entities\GameStats;
 use entities\LostariaPlayer;
 use models\RedisModel;
 use utils\MojangUtils;
@@ -56,6 +57,8 @@ class Main extends Web {
         $redisPlayer = $this->redisModel->getOne("redisplayer:". $playerUuid);
         $playerObj = json_decode($redisPlayer, true);
         $player = new LostariaPlayer($playerObj);
+
+        $gameStats = new GameStats($playerUuid, $this->redisModel);
 
         $this->header("Profil de ". $playerName ." • Lostaria", $playerName);
         include("views/common/searchbar.php");
