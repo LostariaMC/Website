@@ -5,7 +5,8 @@ namespace utils;
 class LostariaServerUtils
 {
 
-	public static function getOnlinePlayersCount()
+    // Obsolète
+	/*public static function getOnlinePlayersCount()
 	{
 		$filename = "/srv/MinecraftServer/commons/servers/Lostaria.yml";
 		$file = fopen($filename, "r");
@@ -29,5 +30,5 @@ class LostariaServerUtils
 		return array_map(function ($player) {
 			return trim($player);
 		}, $players);
-	}
+	}*/
 }
