@@ -47,6 +47,7 @@
             <ul class="navbar-nav flex-row ml-md-auto d-none d-md-flex flex-grow justify-content-end flex-grow p-2">
                 <a href="http://discord.lostaria.fr" target="_blank" class="btn btn-outline-light" style="margin-left: 10px;">Discord</a>
                 <a href="https://guide.lostaria.fr" target="_blank" class="btn btn-outline-light" style="margin-left: 10px;">Guide</a>
+                <a href="https://twitter.com/LostariaMC" target="_blank" class="btn btn-outline-light" style="margin-left: 10px;">Twitter</a>
             </ul>
         </div>
     </nav>
