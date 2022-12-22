@@ -2,11 +2,9 @@
 
     <div class="row pt-5">
 
-        <?php
-        if(isset($error) && $error == true){
-            echo '<div class="alert alert-danger" style="text-align: center;">' .strip_tags($_POST['error']). '</div>';
-        }
-        ?>
+        <?php if(isset($error) && $error == true): ?>
+            <div class="alert alert-danger" style="text-align: center;"><?= strip_tags($_POST['error']) ?></div>
+        <?php endif; ?>
 
         <h1>Rechercher un joueur</h1>
 

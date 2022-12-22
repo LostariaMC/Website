@@ -4,13 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <?php
-    if ($title == "") {
-        echo '<title>Lostaria • Statistiques</title>';
-    } else {
-        echo '<title>' . $title . '</title>';
-    }
-    ?>
+    <title><?= ($title == "" ? "Lostaria • Statistiques" : $title) ?></title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
@@ -48,21 +42,8 @@
 <body class="<?= isset($_GET['id']) ? 'brick' : '' ?>">
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container-fluid">
-            <?php
-            if (isset($_GET['uuid'])) {
-                echo '<a class="navbar-brand" href="./">← Retour</a>';
-            } else {
-                echo '<a class="navbar-brand" href="./">Lostaria</a>';
-            }
-            /*if ($_SERVER['HTTP_HOST'] != 'localhost') {
-                echo '<p style="font-size: 1rem; color: white; padding-top: 1rem;">
-            Joueurs connectés : ' . \utils\LostariaServerUtils::getOnlinePlayersCount() . '</p>';
-            }
-            else {
-                echo '<p style="font-size: 1rem; color: white; padding-top: 1rem;">-- Mode Développement --</p>';
-            }*/
-            echo '<p style="font-size: 1rem; color: white; padding-top: 1rem;">play.lostaria.fr</p>';
-            ?>
+            <a class="navbar-brand" href="./"><?= (isset($_GET['uuid']) ? '← Retour' : 'Lostaria') ?></a>
+            <p style="font-size: 1rem; color: white; padding-top: 1rem;">play.lostaria.fr</p>
             <ul class="navbar-nav flex-row ml-md-auto d-none d-md-flex flex-grow justify-content-end flex-grow p-2">
                 <a href="http://discord.lostaria.fr" target="_blank" class="btn btn-outline-light" style="margin-left: 10px;">Discord</a>
                 <a href="https://guide.lostaria.fr" target="_blank" class="btn btn-outline-light" style="margin-left: 10px;">Guide</a>
