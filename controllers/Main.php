@@ -18,12 +18,12 @@ class Main extends Web {
 
     function home() {
         $staffMembers = array(
-            ["95fe8a20-67e6-4a09-96c5-e01ce73870a0", ["Owner", "Resp Développement", "Constructeur"]], // Worsewarn
+            ["95fe8a20-67e6-4a09-96c5-e01ce73870a0", ["Développeur", "Constructeur"]], // Worsewarn
             ["b8220a38-99ce-4347-8af1-53cbf55667ff", ["Développeur", "Sys Admin"]], // Erpriex
-            ["e272b935-1500-40a8-b79d-6f5844f1bc9d", ["Resp Construction"]], // XEL0
+            ["e272b935-1500-40a8-b79d-6f5844f1bc9d", ["Constructeur"]], // XEL0
             ["938e86bd-5d16-49d4-b26a-6775036d744e", ["Développeur", "Constructeur"]], // ElloWorld
             ["beb88774-a96c-4553-8379-c42c75395af7", ["Développeur"]], // lumin0u
-            ["b2410d25-93d3-4045-a807-cdf3ebb4a323", ["Constructeur", "Game Designer"]], // Lycheesis
+            ["b2410d25-93d3-4045-a807-cdf3ebb4a323", ["Constructeur"]], // Lycheesis
         );
 
         $error = false;

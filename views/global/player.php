@@ -59,9 +59,36 @@
             </div>
         </div>
     </div>
-    <div style="margin-top: 50px;" class="row">
+    <div style="margin-top: 50px; flex-wrap: wrap-reverse;" class="row">
         <div style="margin-top: 30px;" class="col-md-8">
             <h4 class="page-header">Statistiques</h4>
+            <div style="display: flex; justify-content: space-around; flex-wrap: wrap;">
+                <?php foreach ($gameStats->getGames() as $gameId => $gameName): ?>
+                    <div class="card col-lg-4 col-md-6 col-sm-4 col-xs-12" style="width: 16rem; margin-right: 10px; margin-bottom: 10px;">
+                        <div class="card-body">
+                            <h5 class="card-title"><?= $gameName ?></h5>
+                            <?php if(!$gameStats->hasPlay($gameId) && !$gameStats->hasPlay($gameId, "host")): ?>
+                                <p class="card-text">Aucune partie jouée</p>
+                            <?php else: ?>
+                                <h6 class="card-subtitle mb-2 text-muted">Classic</h6>
+                                <?php if(!$gameStats->hasPlay($gameId)): ?>
+                                    <p class="card-text">Aucune partie jouée</p>
+                                <?php endif; ?>
+                                <?php
+                                $stats = $gameStats->getStats($gameId);
+                                foreach ($stats as $statId => $statName):
+                                    $statValue = $gameStats->getStat($gameId, "classic", $statId);
+                                ?>
+                                    <div style="display: flex; justify-content: space-between;">
+                                        <p style="margin-bottom: 0px;"><?= $statName; ?></p>
+                                        <span class="badge text-bg-success"><?= $statValue; ?></span>
+                                    </div>
+                                <?php endforeach; ?>
+                            <?php endif; ?>
+                        </div>
+                    </div>
+                <?php endforeach; ?>
+            </div>
             <div class="row">
                 <?php
                 $gamesCards = "";
@@ -104,7 +131,7 @@
                 ?>
             </div>
         </div>
-        <div style="margin-top: 30px;" class="col-md-4">
+        <div style="margin-top: 30px; margin-bottom: 20px;" class="col-md-4">
             <h4 class="page-header">Informations</h4>
             <div style="margin-left: 15px;">
                 <?php
