@@ -46,7 +46,7 @@
 
                 foreach ($badges as $badge){
                     if($badge == "Responsable"){
-                        echo '<span style="margin-right: 5px; margin-top: 5px;" class="badge rounded-pill text-bg-warning">Responsable ✰</span>';
+                        echo '<span style="margin-right: 5px; margin-top: 5px;" class="badge rounded-pill text-bg-warning">Administrateur ✰</span>';
                     }
                     if($badge == "Donateur"){
                         echo '<span style="margin-right: 5px; margin-top: 5px;" class="badge rounded-pill text-bg-danger text-light">Donateur ❤</span>';
@@ -68,22 +68,23 @@
                         <div class="card-body">
                             <h5 class="card-title"><?= $gameName ?></h5>
                             <?php if(!$gameStats->hasPlay($gameId) && !$gameStats->hasPlay($gameId, "host")): ?>
-                                <p class="card-text">Aucune partie jouée</p>
+                                <p class="card-text">Aucune partie jouée 🥲</p>
                             <?php else: ?>
-                                <h6 class="card-subtitle mb-2 text-muted">Classic</h6>
+                                <h6 class="card-subtitle mb-2 text-muted">> Partie classique</h6>
                                 <?php if(!$gameStats->hasPlay($gameId)): ?>
-                                    <p class="card-text">Aucune partie jouée</p>
+                                    <p class="card-text">Aucune partie jouée 🥲</p>
+                                <?php else: ?>
+                                    <?php
+                                    $stats = $gameStats->getStats($gameId);
+                                    foreach ($stats as $statId => $statName):
+                                        $statValue = $gameStats->getStat($gameId, "classic", $statId);
+                                        ?>
+                                        <div style="display: flex; justify-content: space-between; height: 20px; margin-bottom: 2px;">
+                                            <p><?= $statName; ?></p>
+                                            <span class="badge text-bg-success"><?= $statValue; ?></span>
+                                        </div>
+                                    <?php endforeach; ?>
                                 <?php endif; ?>
-                                <?php
-                                $stats = $gameStats->getStats($gameId);
-                                foreach ($stats as $statId => $statName):
-                                    $statValue = $gameStats->getStat($gameId, "classic", $statId);
-                                ?>
-                                    <div style="display: flex; justify-content: space-between;">
-                                        <p style="margin-bottom: 0px;"><?= $statName; ?></p>
-                                        <span class="badge text-bg-success"><?= $statValue; ?></span>
-                                    </div>
-                                <?php endforeach; ?>
                             <?php endif; ?>
                         </div>
                     </div>
