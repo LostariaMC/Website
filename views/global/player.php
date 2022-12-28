@@ -96,6 +96,9 @@
                                     $stats = $gameStats->getStats($gameId);
                                     foreach ($stats as $statId => $statName):
                                         $statValue = $gameStats->getStat($gameId, "host", $statId);
+                                        if($statId === "timePlayed"){
+                                            $statValue = \utils\DateUtils::convertSecondsToHoursMinutes($statValue);
+                                        }
                                         ?>
                                         <div style="display: flex; justify-content: space-between; height: 20px; margin-bottom: 2px;">
                                             <p><?= $statName; ?></p>
