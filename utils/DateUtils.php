@@ -18,7 +18,10 @@ class DateUtils {
         $hrs = $seconds / 60;
         $mins = $hrs % 60;
         $hrs = $hrs / 60;
-        return (int)$hrs . "h" . (int)$mins;
+
+        $hFinal = (int)$hrs;
+        $mFinal = (int)$mins;
+        return $hFinal . "h" . ($mFinal == 0 ? "" : ($mFinal < 10 ? "0". $mFinal : $mFinal));
     }
 
 }
