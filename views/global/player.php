@@ -64,20 +64,38 @@
             <h4 class="page-header">Statistiques</h4>
             <div style="display: flex; justify-content: space-around; flex-wrap: wrap;">
                 <?php foreach ($gameStats->getGames() as $gameId => $gameName): ?>
-                    <div class="card col-lg-4 col-md-6 col-sm-4 col-xs-12" style="width: 16rem; margin-right: 10px; margin-bottom: 10px;">
+                    <div class="card col-lg-4 col-md-6 col-sm-4 col-xs-12" style="width: 17rem; margin-right: 10px; margin-bottom: 10px;">
                         <div class="card-body">
                             <h5 class="card-title"><?= $gameName ?></h5>
                             <?php if(!$gameStats->hasPlay($gameId) && !$gameStats->hasPlay($gameId, "host")): ?>
-                                <p class="card-text">Aucune partie jouée 🥲</p>
+                                <p class="card-text">Aucune partie jouée</p>
                             <?php else: ?>
-                                <h6 class="card-subtitle mb-2 text-muted">> Partie classique</h6>
+                                <h6 class="card-subtitle mb-2 text-muted">> Parties classique</h6>
                                 <?php if(!$gameStats->hasPlay($gameId)): ?>
-                                    <p class="card-text">Aucune partie jouée 🥲</p>
+                                    <p class="card-text">Aucune partie jouée</p>
                                 <?php else: ?>
                                     <?php
                                     $stats = $gameStats->getStats($gameId);
                                     foreach ($stats as $statId => $statName):
                                         $statValue = $gameStats->getStat($gameId, "classic", $statId);
+                                        if($statId === "timePlayed"){
+                                            $statValue = \utils\DateUtils::convertSecondsToHoursMinutes($statValue);
+                                        }
+                                        ?>
+                                        <div style="display: flex; justify-content: space-between; height: 20px; margin-bottom: 2px;">
+                                            <p><?= $statName; ?></p>
+                                            <span class="badge text-bg-success"><?= $statValue; ?></span>
+                                        </div>
+                                    <?php endforeach; ?>
+                                <?php endif; ?>
+                                <h6 style="margin-top: 30px;" class="card-subtitle mb-2 text-muted">> Parties personnalisées (host)</h6>
+                                <?php if(!$gameStats->hasPlay($gameId, "host")): ?>
+                                    <p class="card-text">Aucune partie jouée</p>
+                                <?php else: ?>
+                                    <?php
+                                    $stats = $gameStats->getStats($gameId);
+                                    foreach ($stats as $statId => $statName):
+                                        $statValue = $gameStats->getStat($gameId, "host", $statId);
                                         ?>
                                         <div style="display: flex; justify-content: space-between; height: 20px; margin-bottom: 2px;">
                                             <p><?= $statName; ?></p>
@@ -89,47 +107,6 @@
                         </div>
                     </div>
                 <?php endforeach; ?>
-            </div>
-            <div class="row">
-                <?php
-                $gamesCards = "";
-                foreach ($gameStats->getGames() as $gameId => $gameName){
-                    $gamesCards = $gamesCards. '<div class="col-lg-4 col-md-6 col-sm-4 col-xs-12"><div class="card" style="width: 16rem; margin-bottom: 20px;"><div class="card-body">';
-                    $gamesCards = $gamesCards. '<h5 class="card-title">'. $gameName .'</h5>';
-                    if(!$gameStats->hasPlay($gameId) && !$gameStats->hasPlay($gameId, "host")){
-                        $gamesCards = $gamesCards. '<p class="card-text">Aucune partie jouée</p>';
-                    }else{
-                        $gamesCards = $gamesCards. '<h6 class="card-subtitle mb-2 text-muted">Classic</h6>';
-                        if(!$gameStats->hasPlay($gameId)){
-                            $gamesCards = $gamesCards. '<p class="card-text">Aucune partie jouée</p>';
-                        }else{
-                            $stats = $gameStats->getStats($gameId);
-                            $gamesCards = $gamesCards. '<p class="card-text">';
-                            foreach ($stats as $statId => $statName){
-                                $statValue = $gameStats->getStat($gameId, "classic", $statId);
-                                //$gamesCards = $gamesCards. '<div class="row"><div class="col" style="font-size: 15px;">'. $statName .'</div><div class="col" style="text-align: right; font-size: 15px;"><span class="badge text-bg-success">'. $statValue .'</span></div></div>';
-                                $gamesCards = $gamesCards. '<div>'. $statName .' <b style="float: right;"><span class="badge text-bg-success">'. $statValue .'</span></b></div>';
-                            }
-                            $gamesCards = $gamesCards. '</p>';
-                        }
-                        $gamesCards = $gamesCards. '<h6 class="card-subtitle mb-2 text-muted" style="margin-top: 30px;">Host</h6>';
-                        if(!$gameStats->hasPlay($gameId, "host")){
-                            $gamesCards = $gamesCards. '<p class="card-text">Aucune partie jouée</p>';
-                        }else{
-                            $stats = $gameStats->getStats($gameId);
-                            $gamesCards = $gamesCards. '<p class="card-text">';
-                            foreach ($stats as $statId => $statName){
-                                $statValue = $gameStats->getStat($gameId, "host", $statId);
-                                //$gamesCards = $gamesCards. '<div class="row"><div class="col" style="font-size: 15px;">'. $statName .'</div><div class="col" style="text-align: right; font-size: 15px;"><span class="badge text-bg-success">'. $statValue .'</span></div></div>';
-                                $gamesCards = $gamesCards. '<div>'. $statName .' <b style="float: right;"><span class="badge text-bg-success">'. $statValue .'</span></b></div>';
-                            }
-                            $gamesCards = $gamesCards. '</p>';
-                        }
-                    }
-                    $gamesCards = $gamesCards. '</div></div></div>';
-                }
-                echo $gamesCards;
-                ?>
             </div>
         </div>
         <div style="margin-top: 30px; margin-bottom: 20px;" class="col-md-4">

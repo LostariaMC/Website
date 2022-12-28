@@ -13,4 +13,12 @@ class DateUtils {
         return date('d', $millis) .' '. self::getMonthStr(date('m', $millis)) .' '. date('Y', $millis);
     }
 
+    static function convertSecondsToHoursMinutes($seconds){
+        $secs = $seconds % 60;
+        $hrs = $seconds / 60;
+        $mins = $hrs % 60;
+        $hrs = $hrs / 60;
+        return (int)$hrs . "h" . (int)$mins;
+    }
+
 }
