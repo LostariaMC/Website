@@ -44,4 +44,8 @@ class LostariaPlayer {
         return $this->redisPlayer['firstConnection'];
     }
 
+    public function isConnected(){
+        return $this->redisPlayer['connected'];
+    }
+
 }

@@ -131,7 +131,7 @@ function isTimeStat($statId){
                 $nowTimeInput = date('Y-m-d\TH:i:s');
                 $nowTime = new DateTime($nowTimeInput);
                 $lastConnectionDiff = $nowTime->diff($lastConnectionTime);
-                $lastConnectionStr = "Il y a ";
+                $lastConnectionStr = "";
 
                 if($lastConnectionDiff->y == 0){
                     if($lastConnectionDiff->m == 0){
@@ -153,9 +153,8 @@ function isTimeStat($statId){
 
                 $firstConnectionSeconds = $player->getFirstConnection() / 1000;
                 $firstConnectionStr = \utils\DateUtils::convertMillisToDateStr($firstConnectionSeconds);
-
                 ?>
-                <p><i class="uil uil-angle-right-b"></i> Dernière connexion <span class="badge text-bg-danger"><?= $lastConnectionStr; ?></span></p>
+                <p><i class="uil uil-angle-right-b"></i> <?= ($player->isConnected() ? "Connecté depuis" : "Dernière connexion") ?> <span class="badge text-bg-<?= ($player->isConnected() ? "success" : "danger") ?>"><?= ($player->isConnected() ? $lastConnectionStr : 'Il y a '. $lastConnectionStr) ?></span></p>
                 <p><i class="uil uil-angle-right-b"></i> Inscription <span class="badge text-bg-info text-light"><?= $firstConnectionStr; ?></span></p>
                 <p><i class="uil uil-angle-right-b"></i> Tickets <span class="badge text-bg-success"><?= $player->getTickets(); ?></span></p>
             </div>
