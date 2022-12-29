@@ -47,7 +47,7 @@ class Main extends Web {
 
         $registered = $this->redisModel->keyExist("redisplayer:". $playerUuid);
         if(!$registered){
-            $_POST['error'] = "Le joueur ne s'est jamais connecté sur Lostaria, tu devrais l'inviter 😉";
+            $_POST['error'] = "Ce joueur ne s'est jamais connecté sur Lostaria, tu devrais l'inviter 😉";
             $this->home();
             return;
         }

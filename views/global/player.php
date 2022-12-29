@@ -1,10 +1,12 @@
+<?php
+
+function isTimeStat($statId){
+    return $statId === "timePlayed" || $statId === "kothCapture";
+}
+
+?>
+
 <div class="container">
-    <div style="text-align: center; margin-left: 20%; margin-right: 20%;">
-        <div class="alert alert-warning" role="alert">
-            Cette page est en cours de développement !<br>
-            En attendant, rejoins-nous sur notre <a href="http://discord.lostaria.fr" target="_blank" class="alert-link">Discord</a>
-        </div>
-    </div>
     <div class="card card-hover border-0">
         <div class="card-body d-flex">
             <div class="p-3">
@@ -78,7 +80,7 @@
                                     $stats = $gameStats->getStats($gameId);
                                     foreach ($stats as $statId => $statName):
                                         $statValue = $gameStats->getStat($gameId, "classic", $statId);
-                                        if($statId === "timePlayed"){
+                                        if(isTimeStat($statId)){
                                             $statValue = \utils\DateUtils::convertSecondsToHoursMinutes($statValue);
                                         }
                                         ?>
@@ -96,7 +98,7 @@
                                     $stats = $gameStats->getStats($gameId);
                                     foreach ($stats as $statId => $statName):
                                         $statValue = $gameStats->getStat($gameId, "host", $statId);
-                                        if($statId === "timePlayed"){
+                                        if(isTimeStat($statId)){
                                             $statValue = \utils\DateUtils::convertSecondsToHoursMinutes($statValue);
                                         }
                                         ?>
