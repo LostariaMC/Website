@@ -80,6 +80,9 @@ function isTimeStat($statId){
                                     $stats = $gameStats->getStats($gameId);
                                     foreach ($stats as $statId => $statName):
                                         $statValue = $gameStats->getStat($gameId, "classic", $statId);
+                                        if(is_bool($statValue)){
+                                            $statValue = 0;
+                                        }
                                         if(isTimeStat($statId)){
                                             $statValue = \utils\DateUtils::convertSecondsToHoursMinutes($statValue);
                                         }
@@ -98,6 +101,9 @@ function isTimeStat($statId){
                                     $stats = $gameStats->getStats($gameId);
                                     foreach ($stats as $statId => $statName):
                                         $statValue = $gameStats->getStat($gameId, "host", $statId);
+                                        if(is_bool($statValue)){
+                                            $statValue = 0;
+                                        }
                                         if(isTimeStat($statId)){
                                             $statValue = \utils\DateUtils::convertSecondsToHoursMinutes($statValue);
                                         }
