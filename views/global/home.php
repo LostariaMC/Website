@@ -23,26 +23,28 @@
 
 <div class="container">
 
-    <h3 style="margin: 20px">Membres de l'équipe :</h3>
-    <?php
-    $i = 0;
-    foreach ($staffMembers as $p) {
-        if ($i >= 2) {
-            echo '</div>';
+    <div class="row">
+        <div class="col-md-8">
+            <h4 style="margin: 20px">Membres de l'équipe :</h4>
+            <?php
             $i = 0;
-        }
-        if ($i == 0) {
-            echo '<div class="row">';
-        }
+            foreach ($staffMembers as $p) {
+                if ($i >= 2) {
+                    echo '</div>';
+                    $i = 0;
+                }
+                if ($i == 0) {
+                    echo '<div class="row">';
+                }
 
-        $competences = "";
-        foreach ($p[1] as $c) {
-            $competences = $competences . "<span style='margin-right: 3px' class=\"badge rounded-pill text-bg-primary text-light\">" . $c . "</span>";
-        }
+                $competences = "";
+                foreach ($p[1] as $c) {
+                    $competences = $competences . "<span style='margin-right: 3px' class=\"badge rounded-pill text-bg-primary text-light\">" . $c . "</span>";
+                }
 
-        $staffName = \utils\MojangUtils::getName($p[0]);
+                $staffName = \utils\MojangUtils::getName($p[0]);
 
-        echo '
+                echo '
             <div class="col">
                 <div class="col-sm-12 p-3">
                     <div class="card card-hover">
@@ -60,10 +62,16 @@
                 </div>
             </div>
             ';
-        $i++;
-    }
-    if ($i >= 2) {
-        echo '</div>';
-    }
-    ?>
+                $i++;
+            }
+            if ($i >= 2) {
+                echo '</div>';
+            }
+            ?>
+        </div>
+        <div style="margin-top: 30px; padding-bottom: 40px;" class="col-md-4">
+            <a class="twitter-timeline" href="https://twitter.com/LostariaMC?ref_src=twsrc%5Etfw" data-height="900">Tweets par LostariaMC</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+        </div>
+    </div>
 </div>
