@@ -161,6 +161,7 @@ function isTimeStat($statId){
         </div>
     </div>
 </div>
+</div>
 <style>
     .mccolor-yellow{
         color: #ffc100;
