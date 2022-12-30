@@ -125,4 +125,19 @@ class GameStats {
         return $this->redisModel->getOne("games.statistics.". $this->playerUuid .".". $gameId .".". $mode .".". $stat);
     }
 
+    public function getSumTimePlayed(){
+        $timePlayed = 0;
+        foreach ($this->getGames() as $gameId => $gameName){
+            $timePlayedGameClassic = $this->getStat($gameId, "classic", "timePlayed");
+            if(!is_bool($timePlayedGameClassic)){
+                $timePlayed += $timePlayedGameClassic;
+            }
+            $timePlayedGameHost = $this->getStat($gameId, "host", "timePlayed");
+            if(!is_bool($timePlayedGameHost)){
+                $timePlayed += $timePlayedGameHost;
+            }
+        }
+        return $timePlayed;
+    }
+
 }

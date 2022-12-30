@@ -155,6 +155,7 @@ function isTimeStat($statId){
                 $firstConnectionStr = \utils\DateUtils::convertMillisToDateStr($firstConnectionSeconds);
                 ?>
                 <p><i class="uil uil-angle-right-b"></i> <?= ($player->isConnected() ? "Connecté depuis" : "Dernière connexion") ?> <span class="badge text-bg-<?= ($player->isConnected() ? "success" : "danger") ?>"><?= ($player->isConnected() ? $lastConnectionStr : 'Il y a '. $lastConnectionStr) ?></span></p>
+                <p><i class="uil uil-angle-right-b"></i> Temps de jeu <span class="badge text-bg-success"><?= \utils\DateUtils::convertSecondsToHoursMinutes($gameStats->getSumTimePlayed()); ?></span></p>
                 <p><i class="uil uil-angle-right-b"></i> Inscription <span class="badge text-bg-info text-light"><?= $firstConnectionStr; ?></span></p>
                 <p><i class="uil uil-angle-right-b"></i> Tickets <span class="badge text-bg-success"><?= $player->getTickets(); ?></span></p>
             </div>
