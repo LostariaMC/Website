@@ -17,6 +17,7 @@ class Web
         Route::Add('/', [$main, 'home']);
         Route::Add('/player', [$main, 'player']);
         Route::Add('/search', [$main, 'search']);
+        Route::Add('/legal', [$main, 'legal']);
     }
 }
 

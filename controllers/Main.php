@@ -82,4 +82,10 @@ class Main extends Web {
         }
 
     }
+
+    function legal(){
+        $this->header();
+        include("views/common/legal.php");
+        $this->footer();
+    }
 }
