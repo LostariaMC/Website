@@ -18,65 +18,66 @@ class GameStats {
     ];
 
     private $sw = [
-        "kills" => "Tués",
         "played" => "Parties jouées",
-        "sheepKilled" => "Moutons tués",
-        "sheepLaunch" => "Moutons lancés",
-        "swBonusUsed" => "Laines activées",
         "timePlayed" => "Temps de jeu",
-        "win" => "Victoires"
+        "win" => "Victoires",
+        "kills" => "Tués",
+        "sheepLaunch" => "Moutons lancés",
+        "sheepKilled" => "Moutons tués",
+        "swBonusUsed" => "Laines activées"
     ];
     private $pitchout = [
+        "played" => "Parties jouées",
+        "timePlayed" => "Temps de jeu",
+        "win" => "Victoires",
         "ejections" => "Éjections",
-        "lifesLost" => "Vies perdues",
-        "played" => "Parties jouées",
-        "timePlayed" => "Temps de jeu",
-        "win" => "Victoires"
+        "lifesLost" => "Vies perdues"
     ];
-    private $runaway = ["bonusUsed" => "Bonus utilisés",
-        "infections" => "Nombre de joueurs infectés",
+    private $runaway = [
         "played" => "Parties jouées",
         "timePlayed" => "Temps de jeu",
+        "winsInfected" => "Victoires (Infecté)",
+        "winsSick" => "Victoires (Malade)",
+        "infections" => "Nombre de joueurs infectés",
         "timesInfected" => "Nombre de fois infecté",
         "timesSick" => "Nombre de fois malade",
         "transformations" => "Succombations",
-        "winsInfected" => "Victoires (Infecté)",
-        "winsSick" => "Victoires (Malade)"
+        "bonusUsed" => "Bonus utilisés"
     ];
     private $koth = [
-        "assists" => "Assistances",
-        "damages" => "Dégâts",
-        "kills" => "Tués",
-        "kothCapture" => "Capture",
-        "kothGolems" => "Golems tués",
         "played" => "Parties jouées",
         "timePlayed" => "Temps de jeu",
-        "win" => "Victoires"
+        "win" => "Victoires",
+        "kills" => "Tués",
+        "damages" => "Dégâts",
+        "assists" => "Assistances",
+        "kothCapture" => "Capture",
+        "kothGolems" => "Golems tués"
     ];
     private $mlgrush = [
-        "kills" => "Tués",
-        "mlgrushBlockBreak" => "Blocs cassés",
-        "mlgrushBlockPlace" => "Blocs posés",
-        "mlgrushDefenses" => "Défense",
-        "mlgrushPoints" => "Points marqués",
         "played" => "Parties jouées",
         "timePlayed" => "Temps de jeu",
-        "win" => "Victoires"
+        "win" => "Victoires",
+        "mlgrushPoints" => "Points marqués",
+        "kills" => "Tués",
+        "mlgrushBlockPlace" => "Blocs posés",
+        "mlgrushBlockBreak" => "Blocs cassés",
+        "mlgrushDefenses" => "Défense"
     ];
     private $tower = [
-        "kills" => "Tués",
         "played" => "Parties jouées",
         "timePlayed" => "Temps de jeu",
-        "twDefenses" => "Défense",
+        "win" => "Victoires",
         "twPoints" => "Points marqués",
-        "win" => "Victoires"
+        "kills" => "Tués",
+        "twDefenses" => "Défense"
     ];
     private $ploufcraft = [
         "played" => "Parties jouées",
+        "timePlayed" => "Temps de jeu",
+        "win" => "Victoires",
         "plouf_items_crafted" => "Items craftés",
         "plouf_unique_items_crafted" => "Items uniques craftés",
-        "timePlayed" => "Temps de jeu",
-        "win" => "Victoires"
     ];
 
     public function __construct($playerUuid, $redisModel) {
