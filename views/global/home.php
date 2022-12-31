@@ -68,6 +68,7 @@
                 echo '</div>';
             }
             ?>
+            <a style="margin-top: 20px; margin-right: 30px; margin-bottom: 40px; float: right;" href="https://guide.lostaria.fr/team.html" target="_blank" class="btn btn-outline-primary">Voir l'équipe →</a>
         </div>
         <div style="margin-top: 30px; padding-bottom: 40px;" class="col-md-4">
             <a class="twitter-timeline" href="https://twitter.com/LostariaMC?ref_src=twsrc%5Etfw" data-height="900">Tweets par LostariaMC</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
