@@ -158,6 +158,9 @@ function isTimeStat($statId){
                 <p><i class="uil uil-angle-right-b"></i> Temps de jeu <span class="badge text-bg-success"><?= \utils\DateUtils::convertSecondsToHoursMinutes($gameStats->getSumTimePlayed()); ?></span></p>
                 <p><i class="uil uil-angle-right-b"></i> Inscription <span class="badge text-bg-info text-light"><?= $firstConnectionStr; ?></span></p>
                 <p><i class="uil uil-angle-right-b"></i> Tickets <span class="badge text-bg-success"><?= $player->getTickets(); ?></span></p>
+                <figure style="margin-top: 50px;" class="highcharts-figure">
+                    <div id="container"></div>
+                </figure>
             </div>
         </div>
     </div>
@@ -183,4 +186,115 @@ function isTimeStat($statId){
         margin-bottom: 15px;
     }
 
+
+    .highcharts-figure,
+    .highcharts-data-table table {
+        min-width: 320px;
+        max-width: 800px;
+        margin: 1em auto;
+    }
+
+    #container {
+        height: 450px;
+    }
+
+    .highcharts-data-table table {
+        font-family: Verdana, sans-serif;
+        border-collapse: collapse;
+        border: 1px solid #ebebeb;
+        margin: 10px auto;
+        text-align: center;
+        width: 100%;
+        max-width: 500px;
+    }
+
+    .highcharts-data-table caption {
+        padding: 1em 0;
+        font-size: 1.2em;
+        color: #555;
+    }
+
+    .highcharts-data-table th {
+        font-weight: 600;
+        padding: 0.5em;
+    }
+
+    .highcharts-data-table td,
+    .highcharts-data-table th,
+    .highcharts-data-table caption {
+        padding: 0.5em;
+    }
+
+    .highcharts-data-table thead tr,
+    .highcharts-data-table tr:nth-child(even) {
+        background: #f8f8f8;
+    }
+
+    .highcharts-data-table tr:hover {
+        background: #f1f7ff;
+    }
 </style>
+<script>
+    Highcharts.chart('container', {
+        chart: {
+            type: 'area'
+        },
+        accessibility: {
+            description: "Evolution de l'expérience du joueur au fil du temps"
+        },
+        title: {
+            text: "Évolution de l'expérience"
+        },
+        xAxis: {
+            allowDecimals: false,
+            labels: {
+                formatter: function () {
+                    return this.value; // clean, unformatted number for year
+                }
+            },
+            accessibility: {
+                rangeDescription: 'Range: 1940 to 2017.'
+            }
+        },
+        yAxis: {
+            title: {
+                text: 'Expérience'
+            },
+            labels: {
+                formatter: function () {
+                    return this.value;
+                }
+            }
+        },
+        tooltip: {
+            pointFormat: '{series.name} had stockpiled <b>{point.y:,.0f}</b><br/>warheads in {point.x}'
+        },
+        plotOptions: {
+            area: {
+                pointStart: 0,
+                marker: {
+                    enabled: false,
+                    symbol: 'circle',
+                    radius: 2,
+                    states: {
+                        hover: {
+                            enabled: true
+                        }
+                    }
+                }
+            }
+        },
+        series: [{
+            name: "Expérience de <?= $playerName; ?>",
+            data: [
+                <?php
+                foreach ($player->getExperienceHistoric() as $date => $exp){
+                    if(is_int($exp)){
+                        echo $exp. ', ';
+                    }
+                }
+                ?>
+            ]
+        }]
+    });
+</script>

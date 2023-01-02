@@ -27,6 +27,8 @@
 
     <meta name="keywords" content="Lostaria, Minecraft, Serveur, Statistiques<?= ($keywords == "" ? "" : ", " . $keywords) ?>">
 
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-DQH14YJE51"></script>
     <script>

@@ -48,4 +48,10 @@ class LostariaPlayer {
         return $this->redisPlayer['connected'];
     }
 
+    public function getExperienceHistoric(){
+        $expHistoric = $this->redisPlayer['experienceHistoric'];
+        sort($expHistoric);
+        return $expHistoric;
+    }
+
 }
