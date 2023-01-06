@@ -247,13 +247,11 @@ function isTimeStat($statId){
         },
         xAxis: {
             allowDecimals: false,
+            type: 'datetime',
             labels: {
                 formatter: function () {
                     return this.value; // clean, unformatted number for year
                 }
-            },
-            accessibility: {
-                rangeDescription: 'Range: 1940 to 2017.'
             }
         },
         yAxis: {
@@ -267,11 +265,10 @@ function isTimeStat($statId){
             }
         },
         tooltip: {
-            pointFormat: '{series.name} had stockpiled <b>{point.y:,.0f}</b><br/>warheads in {point.x}'
+            pointFormat: '<?= $playerName ?> avait <b>{point.y:,.0f}</b> points d\'expériences'
         },
         plotOptions: {
             area: {
-                pointStart: 0,
                 marker: {
                     enabled: false,
                     symbol: 'circle',
@@ -289,8 +286,11 @@ function isTimeStat($statId){
             data: [
                 <?php
                 $year = 2022;
+                $yearStart = 0;
                 $month = 1;
+                $monthStart = 0;
                 $day = 1;
+                $dayStart = 0;
                 $currentDate = date("Y-m-d");
                 $builderDate = $year . '-' . ($month < 10 ? '0' . $month : $month) . '-' . ($day < 10 ? '0' . $day : $day);
                 while ($builderDate != $currentDate) {
@@ -305,11 +305,18 @@ function isTimeStat($statId){
                     }
                     $builderDate = $year . '-' . ($month < 10 ? '0' . $month : $month) . '-' . ($day < 10 ? '0' . $day : $day);
                     if (array_key_exists($builderDate, $player->getExperienceHistoric())) {
+                        if($dayStart == 0){
+                            $dayStart = $day;
+                            $monthStart = $month;
+                            $yearStart = $year;
+                        }
                         echo $player->getExperienceHistoric()[$builderDate]. ', ';
                     }
                 }
                 ?>
-            ]
+            ],
+            pointStart: Date.UTC(<?= $yearStart ?>, <?= $monthStart - 1 ?>, <?= $dayStart ?>),
+            pointInterval: 24 * 3600 * 1000
         }]
     });
 </script>
