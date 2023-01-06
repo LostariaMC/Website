@@ -288,9 +288,24 @@ function isTimeStat($statId){
             name: "Expérience de <?= $playerName; ?>",
             data: [
                 <?php
-                foreach ($player->getExperienceHistoric() as $date => $exp){
-                    if(is_int($exp)){
-                        echo $exp. ', ';
+                $year = 2022;
+                $month = 1;
+                $day = 1;
+                $currentDate = date("Y-m-d");
+                $builderDate = $year . '-' . ($month < 10 ? '0' . $month : $month) . '-' . ($day < 10 ? '0' . $day : $day);
+                while ($builderDate != $currentDate) {
+                    $day++;
+                    if ($day > 31) {
+                        $day = 1;
+                        $month++;
+                        if ($month > 12) {
+                            $month = 1;
+                            $year++;
+                        }
+                    }
+                    $builderDate = $year . '-' . ($month < 10 ? '0' . $month : $month) . '-' . ($day < 10 ? '0' . $day : $day);
+                    if (array_key_exists($builderDate, $player->getExperienceHistoric())) {
+                        echo $player->getExperienceHistoric()[$builderDate]. ', ';
                     }
                 }
                 ?>

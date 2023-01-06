@@ -57,9 +57,6 @@ class Main extends Web {
         $redisPlayer = $this->redisModel->getOne("redisplayer:". $playerUuid);
         $playerObj = json_decode($redisPlayer, true);
         $player = new LostariaPlayer($playerObj);
-        print_r($redisPlayer);
-        print_r("<br/>-------------------------------------<br/>");
-        print_r($player->getExperienceHistoric());
 
         $gameStats = new GameStats($playerUuid, $this->redisModel);
 

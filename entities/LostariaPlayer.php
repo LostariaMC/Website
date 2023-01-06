@@ -50,7 +50,6 @@ class LostariaPlayer {
 
     public function getExperienceHistoric(){
         $expHistoric = $this->redisPlayer['experienceHistoric'];
-        sort($expHistoric);
         return $expHistoric;
     }
 
