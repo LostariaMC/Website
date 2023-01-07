@@ -7,7 +7,7 @@ function isTimeStat($statId){
 ?>
 
 <div class="container">
-    <div class="card card-hover border-0">
+    <div class="card card-hover border-0" style="padding: 20px;">
         <div class="card-body d-flex">
             <div class="p-3">
                 <img class="preview-image" src="<?= \utils\HeadUtils::getHeadLink($playerUuid) ?>/120" alt="<?= $playerName ?> avatar">

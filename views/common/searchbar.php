@@ -6,7 +6,7 @@
             <div class="alert alert-danger" style="text-align: center;"><?= strip_tags($_POST['error']) ?></div>
         <?php endif; ?>
 
-        <h1>Rechercher un joueur</h1>
+        <h1 style="color: #FFF;">Rechercher un joueur</h1>
 
         <form method="GET" action="./search">
             <div class="form-floating mb-3">
