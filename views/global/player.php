@@ -44,6 +44,8 @@ function isTimeStat($statId){
                 if(count($badges) > 0){
                     echo '<div style="margin-top: 5px;">
                     <hr style="height: 2px; margin-right: 60%; color: #606060; background-color: #606060; border: none;">';
+                }else{
+                    echo '<div>';
                 }
 
                 foreach ($badges as $badge){
@@ -66,7 +68,7 @@ function isTimeStat($statId){
             <h4 class="page-header">Statistiques</h4>
             <div style="display: flex; justify-content: space-around; flex-wrap: wrap;">
                 <?php foreach ($gameStats->getGames() as $gameId => $gameName): ?>
-                    <div class="card col-lg-4 col-md-6 col-sm-4 col-xs-12" style="width: 17rem; margin-right: 10px; margin-bottom: 10px;">
+                    <div class="card col-lg-4 col-md-6 col-sm-4 col-xs-12" style="width: 16.5rem; margin-right: 10px; margin-bottom: 10px;">
                         <div class="card-body">
                             <h5 class="card-title"><?= $gameName ?></h5>
                             <?php if(!$gameStats->hasPlay($gameId) && !$gameStats->hasPlay($gameId, "host")): ?>
