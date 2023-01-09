@@ -249,12 +249,13 @@ function isTimeStat($statId){
         },
         xAxis: {
             allowDecimals: false,
-            type: 'datetime',
+            /*type: 'datetime',*/
             labels: {
                 formatter: function () {
                     return this.value; // clean, unformatted number for year
-                }
-            }
+                },
+                enabled: false
+            },
         },
         yAxis: {
             title: {
@@ -317,8 +318,8 @@ function isTimeStat($statId){
                 }
                 ?>
             ],
-            pointStart: Date.UTC(<?= $yearStart ?>, <?= $monthStart - 1 ?>, <?= $dayStart ?>),
-            pointInterval: 24 * 3600 * 1000
+            /*pointStart: Date.UTC(<?= $yearStart ?>, <?= $monthStart - 1 ?>, <?= $dayStart ?>),
+            pointInterval: 24 * 3600 * 1000*/
         }]
     });
 </script>
