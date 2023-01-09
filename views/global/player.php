@@ -160,7 +160,7 @@ function isTimeStat($statId){
                 <p><i class="uil uil-angle-right-b"></i> Temps de jeu <span class="badge text-bg-success"><?= \utils\DateUtils::convertSecondsToHoursMinutes($gameStats->getSumTimePlayed()); ?></span></p>
                 <p><i class="uil uil-angle-right-b"></i> Inscription <span class="badge text-bg-info text-light"><?= $firstConnectionStr; ?></span></p>
                 <p><i class="uil uil-angle-right-b"></i> Tickets <span class="badge text-bg-success"><?= $player->getTickets(); ?></span></p>
-                <figure style="margin-top: 50px;" class="highcharts-figure">
+                <figure style="margin-top: 50px; margin-left: -30px;" class="highcharts-figure">
                     <div id="container"></div>
                 </figure>
             </div>
