@@ -21,7 +21,7 @@
     });
 </script>
 
-<div class="container">
+<div class="container" style="background-color: #FFF; border-radius: 10px;">
 
     <div class="row">
         <div class="col-md-8">
