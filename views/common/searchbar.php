@@ -1,6 +1,6 @@
 <div class="container">
 
-    <div class="row pt-5">
+    <div class="row pt-5" style="margin-bottom: 30px;">
 
         <?php if(isset($error) && $error == true): ?>
             <div class="alert alert-danger" style="text-align: center;"><?= strip_tags($_POST['error']) ?></div>
@@ -17,8 +17,5 @@
                 <button class="btn btn-primary" type="submit">Rechercher</button>
             </div>
         </form>
-    </div>
-    <div style="margin: 30px">
-        <hr style="height: 2px; color: #606060; background-color: #606060; width: 80%; border: none; margin: auto;">
     </div>
 </div>
