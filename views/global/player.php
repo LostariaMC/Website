@@ -50,13 +50,16 @@ function isTimeStat($statId){
 
                 foreach ($badges as $badge){
                     if($badge == "Responsable"){
-                        echo '<span style="margin-right: 5px; margin-top: 5px;" class="badge rounded-pill text-bg-warning">Administrateur ✰</span>';
+                        echo '<span style="margin-right: 5px; margin-top: 5px; background-color: #FFAA00;" class="badge rounded-pill">Administrateur ✰</span>';
                     }
                     if($badge == "Donateur"){
-                        echo '<span style="margin-right: 5px; margin-top: 5px;" class="badge rounded-pill text-bg-danger text-light">Donateur ❤</span>';
+                        echo '<span style="margin-right: 5px; margin-top: 5px; background-color: #FF5555;" class="badge rounded-pill text-light">Donateur ❤</span>';
                     }
                     if($badge == "Président"){
-                        echo '<span style="margin-right: 5px; margin-top: 5px;" class="badge rounded-pill text-bg-info text-light">Président ✪</span>';
+                        echo '<span style="margin-right: 5px; margin-top: 5px; background-color: #55FFFF;" class="badge rounded-pill text-light">Président ✪</span>';
+                    }
+                    if($badge == "Champion"){
+                        echo '<span style="margin-right: 5px; margin-top: 5px; background-color: #FF55FF;" class="badge rounded-pill text-light">Champion ☬</span>';
                     }
                 }
                 ?>
