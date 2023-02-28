@@ -12,6 +12,7 @@ class GameStats {
         "pitchout" => "Pitchout",
         "rn" => "Runaway",
         "koth2" => "KOTH",
+        "gravity" => "Gravity",
         "mlgrush" => "MLGRush",
         "tower" => "Tower",
         "ploufcraft" => "PloufCraft"
@@ -53,6 +54,11 @@ class GameStats {
         "assists" => "Assistances",
         "kothCapture" => "Capture",
         "kothGolems" => "Golems tués"
+    ];
+    private $gravity = [
+        "played" => "Parties jouées",
+        "timePlayed" => "Temps de jeu",
+        "win" => "Victoires"
     ];
     private $mlgrush = [
         "played" => "Parties jouées",
@@ -102,6 +108,9 @@ class GameStats {
 
             case "koth2":
                 return $this->koth;
+
+            case "gravity":
+                return $this->gravity;
 
             case "mlgrush":
                 return $this->mlgrush;
