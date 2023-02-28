@@ -15,7 +15,8 @@ class GameStats {
         "gravity" => "Gravity",
         "mlgrush" => "MLGRush",
         "tower" => "Tower",
-        "ploufcraft" => "PloufCraft"
+        "ploufcraft" => "PloufCraft",
+        "colorsplash" => "ColorSplash"
     ];
 
     private $sw = [
@@ -85,6 +86,15 @@ class GameStats {
         "plouf_items_crafted" => "Items craftés",
         "plouf_unique_items_crafted" => "Items uniques craftés",
     ];
+    private $colorsplash = [
+        "played" => "Parties jouées",
+        "timePlayed" => "Temps de jeu",
+        "win" => "Victoires",
+        "kills" => "Tués",
+        "damages" => "Dégâts",
+        "cs_used_dye_nb" => "Teintures utilisées",
+        "cs_care" => "Vies soignées"
+    ];
 
     public function __construct($playerUuid, $redisModel) {
         $this->playerUuid = $playerUuid;
@@ -120,6 +130,9 @@ class GameStats {
 
             case "ploufcraft":
                 return $this->ploufcraft;
+
+            case "colorsplash":
+                return $this->colorsplash;
 
             default:
                 return null;
