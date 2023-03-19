@@ -8,7 +8,7 @@
 
         <h1 style="color: #FFF;">Rechercher un joueur</h1>
 
-        <form method="GET" action="./search">
+        <form method="GET" action="./player">
             <div class="form-floating mb-3">
                 <input type="text" class="form-control" name="q" required="required" placeholder="pseudo">
                 <label for="floatingInput">Pseudo</label>

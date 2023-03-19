@@ -38,12 +38,19 @@ class Main extends Web {
     }
 
     function player() {
-        if(!isset($_GET['uuid']) || strip_tags($_GET['uuid']) == ""){
+        if(!isset($_GET['q']) || strip_tags($_GET['q']) == ""){
             $this->redirect("./");
             return;
         }
 
-        $playerUuid = strip_tags($_GET['uuid']);
+        $playerName = strip_tags($_GET['q']);
+        $playerUuid = MojangUtils::getUuid($playerName);
+        if($playerUuid == ""){
+            $_POST['error'] = "Aucun compte Minecraft n'est associé à ce joueur";
+            $this->home();
+            return;
+        }
+        $playerUuid = MojangUtils::getDashesUuid($playerUuid);
 
         $registered = $this->redisModel->keyExist("redisplayer:". $playerUuid);
         if(!$registered){
@@ -51,8 +58,6 @@ class Main extends Web {
             $this->home();
             return;
         }
-
-        $playerName = MojangUtils::getName($playerUuid);
 
         $redisPlayer = $this->redisModel->getOne("redisplayer:". $playerUuid);
         $playerObj = json_decode($redisPlayer, true);
@@ -64,23 +69,6 @@ class Main extends Web {
         include("views/common/searchbar.php");
         include("views/global/player.php");
         $this->footer();
-    }
-
-    function search(){
-        if(!isset($_GET['q']) || strip_tags($_GET['q']) == ""){
-            $this->redirect("./");
-            return;
-        }
-        $query = strip_tags($_GET['q']);
-
-        $targetUuid = MojangUtils::getUuid($query);
-        if($targetUuid == ""){
-            $_POST['error'] = "Aucun compte Minecraft n'est associé à ce joueur";
-            $this->home();
-        }else{
-            header('Location: ./player?uuid=' .MojangUtils::getDashesUuid($targetUuid));
-        }
-
     }
 
     function legal(){

@@ -55,7 +55,7 @@
                             <div class="p-3 flex-grow-1">
                                 <h5 class="mb-1 pb-0">' . $staffName . '</h5>
                                 ' . $competences . '<br>
-                                <a style="margin-top: 20px;" href="./player?uuid=' . $p[0] . '" class="btn btn-outline-primary">Voir le profil →</a>
+                                <a style="margin-top: 20px;" href="./player?q=' . $p[0] . '" class="btn btn-outline-primary">Voir le profil →</a>
                             </div>
                         </div>
                     </div>
