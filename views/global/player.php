@@ -79,7 +79,7 @@ function isTimeStat($statId){
                             <?php else: ?>
                                 <h6 class="card-subtitle mb-2 text-muted">> Parties classique</h6>
                                 <?php if(!$gameStats->hasPlay($gameId)): ?>
-                                    <p class="card-text">Aucune partie jouée</p>
+                                    <p class="card-text">Aucune partie jouée 😥</p>
                                 <?php else: ?>
                                     <?php
                                     $stats = $gameStats->getStats($gameId);
@@ -100,7 +100,7 @@ function isTimeStat($statId){
                                 <?php endif; ?>
                                 <h6 style="margin-top: 30px;" class="card-subtitle mb-2 text-muted">> Parties personnalisées (host)</h6>
                                 <?php if(!$gameStats->hasPlay($gameId, "host")): ?>
-                                    <p class="card-text">Aucune partie jouée</p>
+                                    <p class="card-text">Aucune partie jouée 😥</p>
                                 <?php else: ?>
                                     <?php
                                     $stats = $gameStats->getStats($gameId);
