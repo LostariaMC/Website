@@ -1,30 +1,7 @@
-<div class="toast-container position-fixed bottom-0 end-0 p-3">
-    <div id="liveToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
-        <div class="toast-header">
-            <img src="./public/images/LostariaLogo.png" height="20" width="20" class="rounded me-2" alt="Lostaria">
-            <strong class="me-auto">Lostaria - Information</strong>
-            <small></small>
-            <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
-        </div>
-        <div class="toast-body">
-            Nous utilisons des cookies pour nous permettre de déterminer le nombre de visites sur notre site.
-            Toutes ces informations sont anonymisées et stockées de manière limitée.
-        </div>
-    </div>
-</div>
-
-<script>
-    $(function() {
-        const toastLiveExample = document.getElementById('liveToast')
-        const toast = new bootstrap.Toast(toastLiveExample)
-        toast.show()
-    });
-</script>
-
 <div class="container" style="background-color: #FFF; border-radius: 10px;">
 
     <div class="row">
-        <div class="col-md-8">
+        <div style="padding-right: 50px;" class="col-md-8">
             <h4 style="margin: 20px">Membres de l'équipe :</h4>
             <?php
             $i = 0;
@@ -45,22 +22,19 @@
                 $staffName = \utils\MojangUtils::getName($p[0]);
 
                 echo '
-            <div class="col">
-                <div class="col-sm-12 p-3">
-                    <div class="card card-hover">
+                <div style="margin-left: 20px; margin-bottom: 20px;" class="card card-hover">
                         <div class="card-body d-flex">
                             <div class="p-3">
                                 <img class="preview-image" src="' . \utils\HeadUtils::getHeadLink($p[0]) . '/100" alt="' . $staffName . ' avatar">
                             </div>
                             <div class="p-3 flex-grow-1">
                                 <h5 class="mb-1 pb-0">' . $staffName . '</h5>
-                                ' . $competences . '<br>
-                                <a style="margin-top: 20px;" href="./player?q=' . $p[0] . '" class="btn btn-outline-primary">Voir le profil →</a>
+                                ' . $competences . '<br/>
+                                <p class="staff__description" style="margin-top: 10px;">'. $p[2] .'</p>
+                                <a style="margin-top: 10px;" href="./player?q=' . $staffName . '" class="btn btn-outline-primary">Voir le profil →</a>
                             </div>
                         </div>
                     </div>
-                </div>
-            </div>
             ';
                 $i++;
             }
@@ -68,11 +42,20 @@
                 echo '</div>';
             }
             ?>
-            <a style="margin-top: 20px; margin-right: 30px; margin-bottom: 40px; float: right;" href="https://guide.lostaria.fr/team.html" target="_blank" class="btn btn-outline-primary">Qui sommes-nous →</a>
+            <!-- <a style="margin-top: 20px; margin-right: 30px; margin-bottom: 40px; float: right;" href="https://guide.lostaria.fr/team.html" target="_blank" class="btn btn-outline-primary">Qui sommes-nous →</a> -->
         </div>
         <div style="margin-top: 30px; padding-bottom: 40px;" class="col-md-4">
             <a class="twitter-timeline" href="https://twitter.com/LostariaMC?ref_src=twsrc%5Etfw" data-height="900">Tweets par LostariaMC</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-
         </div>
     </div>
 </div>
+
+<style>
+@media screen and (max-width: 490px) {
+    .staff__description {
+        display: none;
+    }
+}
+
+}
+</style>
