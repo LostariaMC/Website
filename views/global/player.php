@@ -75,7 +75,7 @@ function isTimeStat($statId){
                         <div class="card-body">
                             <h5 class="card-title"><?= $gameName ?></h5>
                             <?php if(!$gameStats->hasPlay($gameId) && !$gameStats->hasPlay($gameId, "host")): ?>
-                                <p class="card-text">Aucune partie jouée</p>
+                                <p class="card-text">Aucune partie jouée 😥</p>
                             <?php else: ?>
                                 <h6 class="card-subtitle mb-2 text-muted">> Parties classique</h6>
                                 <?php if(!$gameStats->hasPlay($gameId)): ?>
