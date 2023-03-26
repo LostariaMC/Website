@@ -73,7 +73,7 @@ function isTimeStat($statId){
         array_push($quotes, "La véritable force commence par la sagesse");
         array_push($quotes, "La sagesse est la plus grande des vertus");
         array_push($quotes, "Pour accéder à la sagesse, il faut le vouloir");
-        array_push($quotes, "Apprend la sagesse dans la sottise des autres");
+        array_push($quotes, "Apprends la sagesse dans la sottise des autres");
         array_push($quotes, "Celui qui augmente sa sagesse allonge sa vie");
         $randomQuote = $quotes[array_rand($quotes)];
         ?>
