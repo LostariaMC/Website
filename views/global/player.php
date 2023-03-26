@@ -66,6 +66,19 @@ function isTimeStat($statId){
             </div>
         </div>
     </div>
+    <?php if($sanction != ""): ?>
+        <?php
+        $quotes = [];
+        array_push($quotes, "La sagesse est l'art de vivre");
+        array_push($quotes, "La véritable force commence par la sagesse");
+        array_push($quotes, "La sagesse est la plus grande des vertus");
+        array_push($quotes, "Pour accéder à la sagesse, il faut le vouloir");
+        array_push($quotes, "Apprend la sagesse dans la sottise des autres");
+        array_push($quotes, "Celui qui augmente sa sagesse allonge sa vie");
+        $randomQuote = $quotes[array_rand($quotes)];
+        ?>
+        <div class="alert alert-danger" style="text-align: center; margin-left: 25%; margin-right: 25%; margin-top: 40px;"><?= "Ce joueur est ". $sanction ." !" ?><br/><span style="font-style: italic; color: gray;">"<?= $randomQuote; ?>"</span></div>
+    <?php endif; ?>
     <div style="margin-top: 50px; flex-wrap: wrap-reverse;" class="row">
         <div style="margin-top: 30px;" class="col-md-8">
             <h4 class="page-header">Statistiques</h4>

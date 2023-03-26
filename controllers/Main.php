@@ -63,6 +63,14 @@ class Main extends Web {
         $playerObj = json_decode($redisPlayer, true);
         $player = new LostariaPlayer($playerObj);
 
+        $sanction = "";
+        if($this->redisModel->keyExist("sanctions.mute.". $playerUuid)){
+            $sanction = "réduit au silence";
+        }
+        if($this->redisModel->keyExist("sanctions.ban.". $playerUuid)){
+            $sanction = "banni";
+        }
+
         $gameStats = new GameStats($playerUuid, $this->redisModel);
 
         $this->header("Profil de ". $playerName ." • Lostaria", $playerName);
