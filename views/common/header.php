@@ -47,12 +47,9 @@
 <body class="<?= isset($_GET['id']) ? 'brick' : '' ?>">
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container-fluid">
-            <a class="navbar-brand" href="./"><?= (isset($_GET['uuid']) ? '← Retour' : 'Lostaria') ?></a>
-            <!-- <p style="font-size: 1rem; color: white; padding-top: 1rem;">play.lostaria.fr</p> -->
+            <a class="navbar-brand" href="./"><img src="./public/images/LostariaLogo2.png" height="50" width="50" /> </a>
             <ul class="navbar-nav flex-row ml-md-auto d-none d-md-flex flex-grow justify-content-end flex-grow p-2">
-                <!-- <a href="http://discord.lostaria.fr" target="_blank" class="btn btn-outline-light" style="margin-left: 10px;">Discord</a>
-                <a href="https://guide.lostaria.fr" target="_blank" class="btn btn-outline-light" style="margin-left: 10px;">Wiki</a>
-                <a href="https://twitter.com/LostariaMC" target="_blank" class="btn btn-outline-light" style="margin-left: 10px;">Twitter</a> -->
+                <a href="https://shop.lostaria.fr" target="_blank" class="btn btn-outline-light" style="margin-left: 10px;">Boutique</a>
             </ul>
         </div>
     </nav>
