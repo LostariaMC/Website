@@ -90,48 +90,23 @@ function isTimeStat($statId){
                             <?php if(!$gameStats->hasPlay($gameId) && !$gameStats->hasPlay($gameId, "host")): ?>
                                 <p class="card-text">Aucune partie jouée 😥</p>
                             <?php else: ?>
-                                <h6 class="card-subtitle mb-2 text-muted">> Parties classique</h6>
-                                <?php if(!$gameStats->hasPlay($gameId)): ?>
-                                    <p class="card-text">Aucune partie jouée 😥</p>
-                                <?php else: ?>
-                                    <?php
-                                    $stats = $gameStats->getStats($gameId);
-                                    foreach ($stats as $statId => $statName):
-                                        $statValue = $gameStats->getStat($gameId, "classic", $statId);
-                                        if(is_bool($statValue)){
-                                            $statValue = 0;
-                                        }
-                                        if(isTimeStat($statId)){
-                                            $statValue = \utils\DateUtils::convertSecondsToHoursMinutes($statValue);
-                                        }
-                                        ?>
-                                        <div style="display: flex; justify-content: space-between; height: 20px; margin-bottom: 2px;">
-                                            <p><?= $statName; ?></p>
-                                            <span class="badge text-bg-success"><?= $statValue; ?></span>
-                                        </div>
-                                    <?php endforeach; ?>
-                                <?php endif; ?>
-                                <h6 style="margin-top: 30px;" class="card-subtitle mb-2 text-muted">> Parties personnalisées (host)</h6>
-                                <?php if(!$gameStats->hasPlay($gameId, "host")): ?>
-                                    <p class="card-text">Aucune partie jouée 😥</p>
-                                <?php else: ?>
-                                    <?php
-                                    $stats = $gameStats->getStats($gameId);
-                                    foreach ($stats as $statId => $statName):
-                                        $statValue = $gameStats->getStat($gameId, "host", $statId);
-                                        if(is_bool($statValue)){
-                                            $statValue = 0;
-                                        }
-                                        if(isTimeStat($statId)){
-                                            $statValue = \utils\DateUtils::convertSecondsToHoursMinutes($statValue);
-                                        }
-                                        ?>
-                                        <div style="display: flex; justify-content: space-between; height: 20px; margin-bottom: 2px;">
-                                            <p><?= $statName; ?></p>
-                                            <span class="badge text-bg-success"><?= $statValue; ?></span>
-                                        </div>
-                                    <?php endforeach; ?>
-                                <?php endif; ?>
+                                <?php
+                                $stats = $gameStats->getStats($gameId);
+                                foreach ($stats as $statId => $statName):
+                                    $statValue = $gameStats->getStat($gameId, "classic", $statId);
+                                    if(is_bool($statValue)){
+                                        $statValue = 0;
+                                    }
+                                    $statValue += $gameStats->getStat($gameId, "host", $statId);
+                                    if(isTimeStat($statId)){
+                                        $statValue = \utils\DateUtils::convertSecondsToHoursMinutes($statValue);
+                                    }
+                                    ?>
+                                    <div style="display: flex; justify-content: space-between; height: 20px; margin-bottom: 2px;">
+                                        <p><?= $statName; ?></p>
+                                        <span class="badge text-bg-success"><?= $statValue; ?></span>
+                                    </div>
+                                <?php endforeach; ?>
                             <?php endif; ?>
                         </div>
                     </div>
