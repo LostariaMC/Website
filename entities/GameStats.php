@@ -14,6 +14,7 @@ class GameStats {
         "koth2" => "KOTH",
         "gravity" => "Gravity",
         "mlgrush" => "MLGRush",
+        "arrow" => "Arrow",
         "tower" => "Tower",
         "ploufcraft" => "PloufCraft",
         "colorsplash" => "ColorSplash"
@@ -71,6 +72,16 @@ class GameStats {
         "mlgrushBlockBreak" => "Blocs cassés",
         "mlgrushDefenses" => "Défense"
     ];
+    private $arrow = [
+        "played" => "Parties jouées",
+        "timePlayed" => "Temps de jeu",
+        "win" => "Victoires",
+        "arrow:lostLives" => "Vies perdues",
+        "arrow:shotArrows" => "Flèches tirées",
+        "arrow:arrowKills" => "Kills par flèche",
+        "arrow:swordKills" => "Kills à l'épée",
+        "arrow:bestStreak" => "Meilleure série",
+    ];
     private $tower = [
         "played" => "Parties jouées",
         "timePlayed" => "Temps de jeu",
@@ -124,6 +135,9 @@ class GameStats {
 
             case "mlgrush":
                 return $this->mlgrush;
+
+            case "arrow":
+                return $this->arrow;
 
             case "tower":
                 return $this->tower;
