@@ -17,7 +17,8 @@ class GameStats {
         "arrow" => "Arrow",
         "tower" => "Tower",
         "ploufcraft" => "PloufCraft",
-        "colorsplash" => "ColorSplash"
+        "colorsplash" => "ColorSplash",
+        "diecraft" => "Diecraft"
     ];
 
     private $sw = [
@@ -107,6 +108,16 @@ class GameStats {
         "cs_care" => "Vies soignées"
     ];
 
+    private $diecraft = [
+        "played" => "Survies lancées",
+        "timePlayed" => "Temps de jeu",
+        "diecraftBestDifficulty" => "Meilleure difficulté",
+        "diecraftBestScore" => "Meilleur score",
+        "diecraftBestTime" => "Meilleur temps",
+        "diecraftChunksDiscovered" => "Chunks découverts",
+        "diecraftQuestsFinished" => "Quêtes terminées",
+    ];
+
     public function __construct($playerUuid, $redisModel) {
         $this->playerUuid = $playerUuid;
         $this->redisModel = $redisModel;
@@ -147,6 +158,9 @@ class GameStats {
 
             case "colorsplash":
                 return $this->colorsplash;
+
+            case "diecraft":
+                return $this->diecraft;
 
             default:
                 return null;
