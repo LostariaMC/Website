@@ -12,6 +12,7 @@ class GameStats {
         "pitchout" => "Pitchout",
         "rn" => "Runaway",
         "koth2" => "KOTH",
+        "moutron" => "Moutron",
         "gravity" => "Gravity",
         "mlgrush" => "MLGRush",
         "arrow" => "Arrow",
@@ -57,6 +58,15 @@ class GameStats {
         "assists" => "Assistances",
         "kothCapture" => "Capture",
         "kothGolems" => "Golems tués"
+    ];
+    private $moutron = [
+        "played" => "Parties jouées",
+        "timePlayed" => "Temps de jeu",
+        "win" => "Victoires",
+        "kills" => "Éliminations",
+        "#bonusUsed" => "Bonus utilisés",
+        "#playedmoutronFinale" => "Finales jouées",
+        "#winmoutronFinale" => "Finales gagnées"
     ];
     private $gravity = [
         "played" => "Parties jouées",
@@ -140,6 +150,9 @@ class GameStats {
 
             case "koth2":
                 return $this->koth;
+
+            case "moutron":
+                return $this->moutron;
 
             case "gravity":
                 return $this->gravity;

@@ -93,18 +93,105 @@ function isTimeStat($statId){
                                 <?php
                                 $stats = $gameStats->getStats($gameId);
                                 foreach ($stats as $statId => $statName):
-                                    $statValue = $gameStats->getStat($gameId, "classic", $statId);
-                                    if(is_bool($statValue)){
-                                        $statValue = 0;
-                                    }
-                                    $statValue += $gameStats->getStat($gameId, "host", $statId);
-                                    if(isTimeStat($statId)){
-                                        $statValue = \utils\DateUtils::convertSecondsToHoursMinutes($statValue);
+                                    $statValueFinally = 0;
+                                    if(str_starts_with($statId, "#")){
+                                        if($gameId == "moutron"){
+                                            if($statId == "#bonusUsed"){
+                                                $statValueClassicBonusUsedAveuglement = $gameStats->getStat($gameId, "classic", "bonusUsedAveuglement");
+                                                if(!is_bool($statValueClassicBonusUsedAveuglement)){
+                                                    $statValueFinally += $statValueClassicBonusUsedAveuglement;
+                                                }
+                                                $statValueClassicBonusUsedInvisibilite = $gameStats->getStat($gameId, "classic", "bonusUsedInvisibilité");
+                                                if(!is_bool($statValueClassicBonusUsedInvisibilite)){
+                                                    $statValueFinally += $statValueClassicBonusUsedInvisibilite;
+                                                }
+                                                $statValueClassicBonusUsedMur = $gameStats->getStat($gameId, "classic", "bonusUsedMur");
+                                                if(!is_bool($statValueClassicBonusUsedMur)){
+                                                    $statValueFinally += $statValueClassicBonusUsedMur;
+                                                }
+                                                $statValueClassicBonusUsedNettoyeur = $gameStats->getStat($gameId, "classic", "bonusUsedNettoyeur");
+                                                if(!is_bool($statValueClassicBonusUsedNettoyeur)){
+                                                    $statValueFinally += $statValueClassicBonusUsedNettoyeur;
+                                                }
+                                                $statValueClassicBonusUsedVitesse = $gameStats->getStat($gameId, "classic", "bonusUsedVitesse");
+                                                if(!is_bool($statValueClassicBonusUsedVitesse)){
+                                                    $statValueFinally += $statValueClassicBonusUsedVitesse;
+                                                }
+                                                $statValueHostBonusUsedAveuglement = $gameStats->getStat($gameId, "host", "bonusUsedAveuglement");
+                                                if(!is_bool($statValueHostBonusUsedAveuglement)){
+                                                    $statValueFinally += $statValueHostBonusUsedAveuglement;
+                                                }
+                                                $statValueHostBonusUsedInvisibilite = $gameStats->getStat($gameId, "host", "bonusUsedInvisibilité");
+                                                if(!is_bool($statValueHostBonusUsedInvisibilite)){
+                                                    $statValueFinally += $statValueHostBonusUsedInvisibilite;
+                                                }
+                                                $statValueHostBonusUsedMur = $gameStats->getStat($gameId, "host", "bonusUsedMur");
+                                                if(!is_bool($statValueHostBonusUsedMur)){
+                                                    $statValueFinally += $statValueHostBonusUsedMur;
+                                                }
+                                                $statValueHostBonusUsedNettoyeur = $gameStats->getStat($gameId, "host", "bonusUsedNettoyeur");
+                                                if(!is_bool($statValueHostBonusUsedNettoyeur)){
+                                                    $statValueFinally += $statValueHostBonusUsedNettoyeur;
+                                                }
+                                                $statValueHostBonusUsedVitesse = $gameStats->getStat($gameId, "host", "bonusUsedVitesse");
+                                                if(!is_bool($statValueHostBonusUsedVitesse)){
+                                                    $statValueFinally += $statValueHostBonusUsedVitesse;
+                                                }
+                                            }
+                                            if($statId == "#playedmoutronFinale"){
+                                                $statValueClassicPlayedmoutronFinaleBLOCKS = $gameStats->getStat($gameId, "classic", "playedmoutronFinaleBLOCKS");
+                                                if(!is_bool($statValueClassicPlayedmoutronFinaleBLOCKS)){
+                                                    $statValueFinally += $statValueClassicPlayedmoutronFinaleBLOCKS;
+                                                }
+                                                $statValueClassicPlayedmoutronFinaleSHEARS = $gameStats->getStat($gameId, "classic", "playedmoutronFinaleSHEARS");
+                                                if(!is_bool($statValueClassicPlayedmoutronFinaleSHEARS)){
+                                                    $statValueFinally += $statValueClassicPlayedmoutronFinaleSHEARS;
+                                                }
+                                                $statValueHostPlayedmoutronFinaleBLOCKS = $gameStats->getStat($gameId, "host", "playedmoutronFinaleBLOCKS");
+                                                if(!is_bool($statValueHostPlayedmoutronFinaleBLOCKS)){
+                                                    $statValueFinally += $statValueHostPlayedmoutronFinaleBLOCKS;
+                                                }
+                                                $statValueHostPlayedmoutronFinaleSHEARS = $gameStats->getStat($gameId, "host", "playedmoutronFinaleSHEARS");
+                                                if(!is_bool($statValueHostPlayedmoutronFinaleSHEARS)){
+                                                    $statValueFinally += $statValueHostPlayedmoutronFinaleSHEARS;
+                                                }
+                                            }
+                                            if($statId == "#winmoutronFinale"){
+                                                $statValueClassicWinmoutronFinaleBLOCKS = $gameStats->getStat($gameId, "classic", "winmoutronFinaleBLOCKS");
+                                                if(!is_bool($statValueClassicWinmoutronFinaleBLOCKS)){
+                                                    $statValueFinally += $statValueClassicWinmoutronFinaleBLOCKS;
+                                                }
+                                                $statValueClassicWinmoutronFinaleSHEARS = $gameStats->getStat($gameId, "classic", "winmoutronFinaleSHEARS");
+                                                if(!is_bool($statValueClassicWinmoutronFinaleSHEARS)){
+                                                    $statValueFinally += $statValueClassicWinmoutronFinaleSHEARS;
+                                                }
+                                                $statValueHostWinmoutronFinaleBLOCKS = $gameStats->getStat($gameId, "host", "winmoutronFinaleBLOCKS");
+                                                if(!is_bool($statValueHostWinmoutronFinaleBLOCKS)){
+                                                    $statValueFinally += $statValueHostWinmoutronFinaleBLOCKS;
+                                                }
+                                                $statValueHostWinmoutronFinaleSHEARS = $gameStats->getStat($gameId, "host", "winmoutronFinaleSHEARS");
+                                                if(!is_bool($statValueHostWinmoutronFinaleSHEARS)){
+                                                    $statValueFinally += $statValueHostWinmoutronFinaleSHEARS;
+                                                }
+                                            }
+                                        }
+                                    }else{
+                                        $statValueClassic = $gameStats->getStat($gameId, "classic", $statId);
+                                        if(!is_bool($statValueClassic)){
+                                            $statValueFinally += $statValueClassic;
+                                        }
+                                        $statValueHost = $gameStats->getStat($gameId, "host", $statId);
+                                        if(!is_bool($statValueHost)){
+                                            $statValueFinally += $statValueHost;
+                                        }
+                                        if(isTimeStat($statId)){
+                                            $statValueFinally = \utils\DateUtils::convertSecondsToHoursMinutes($statValueFinally);
+                                        }
                                     }
                                     ?>
                                     <div style="display: flex; justify-content: space-between; height: 20px; margin-bottom: 2px;">
                                         <p><?= $statName; ?></p>
-                                        <span class="badge text-bg-success"><?= $statValue; ?></span>
+                                        <span class="badge text-bg-success"><?= $statValueFinally; ?></span>
                                     </div>
                                 <?php endforeach; ?>
                             <?php endif; ?>
