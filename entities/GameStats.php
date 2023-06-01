@@ -14,6 +14,7 @@ class GameStats {
         "moutron" => "Moutron",
         "mlgrush" => "MLGRush",
         "pitchout" => "Pitchout",
+        "defense" => "Defense",
         "rn" => "Runaway",
         "sw" => "SheepWars",
         "ploufcraft" => "PloufCraft",
@@ -40,6 +41,16 @@ class GameStats {
         "damages" => "Dégâts",
         "cs_used_dye_nb" => "Teintures utilisées",
         "cs_care" => "Vies soignées"
+    ];
+    private $defense = [
+        "played" => "Parties jouées",
+        "timePlayed" => "Temps de jeu",
+        "win" => "Victoires",
+        "defenseCapture" => "Temps de capture",
+        "kills" => "Tués",
+        "deaths" => "Morts",
+        "defenseRings" => "Anneaux activés",
+        "defenseBells" => "Cloches activées"
     ];
     private $diecraft = [
         "played" => "Survies lancées",
@@ -143,6 +154,9 @@ class GameStats {
 
             case "colorsplash":
                 return $this->colorsplash;
+
+            case "defense":
+                return $this->defense;
 
             case "diecraft":
                 return $this->diecraft;

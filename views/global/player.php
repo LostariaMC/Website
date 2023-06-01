@@ -1,7 +1,7 @@
 <?php
 
 function isTimeStat($statId){
-    return $statId === "timePlayed" || $statId === "kothCapture";
+    return $statId === "timePlayed" || $statId === "kothCapture" || $statId === "defenseCapture";
 }
 
 ?>
