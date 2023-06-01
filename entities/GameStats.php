@@ -24,8 +24,8 @@ class GameStats {
     ];
 
     private $arrow = [
-        "played" => "Parties jouées",
         "timePlayed" => "Temps de jeu",
+        "played" => "Parties jouées",
         "win" => "Victoires",
         "arrow:lostLives" => "Vies perdues",
         "arrow:shotArrows" => "Flèches tirées",
@@ -34,17 +34,17 @@ class GameStats {
         "arrow:bestStreak" => "Meilleure série"
     ];
     private $colorsplash = [
-        "played" => "Parties jouées",
         "timePlayed" => "Temps de jeu",
-        "win" => "Victoires",
+        "played" => "Parties jouées",
         "kills" => "Tués",
-        "damages" => "Dégâts",
         "cs_used_dye_nb" => "Teintures utilisées",
-        "cs_care" => "Vies soignées"
+        "damages" => "Dégâts infligés",
+        "cs_care" => "Vies soignées",
+        "win" => "Victoires"
     ];
     private $defense = [
-        "played" => "Parties jouées",
         "timePlayed" => "Temps de jeu",
+        "played" => "Parties jouées",
         "win" => "Victoires",
         "defenseCapture" => "Temps de capture",
         "kills" => "Tués",
@@ -53,8 +53,8 @@ class GameStats {
         "defenseBells" => "Cloches activées"
     ];
     private $diecraft = [
-        "played" => "Survies lancées",
         "timePlayed" => "Temps de jeu",
+        "played" => "Survies lancées",
         "diecraftBestDifficulty" => "Meilleure difficulté",
         "diecraftBestScore" => "Meilleur score",
         "diecraftBestTime" => "Meilleur temps",
@@ -62,33 +62,33 @@ class GameStats {
         "diecraftQuestsFinished" => "Quêtes terminées"
     ];
     private $gravity = [
-        "played" => "Parties jouées",
         "timePlayed" => "Temps de jeu",
+        "played" => "Parties jouées",
         "win" => "Victoires"
     ];
     private $koth = [
-        "played" => "Parties jouées",
         "timePlayed" => "Temps de jeu",
-        "win" => "Victoires",
+        "played" => "Parties jouées",
         "kills" => "Tués",
-        "damages" => "Dégâts",
         "assists" => "Assistances",
+        "damages" => "Dégâts",
         "kothCapture" => "Capture",
-        "kothGolems" => "Golems tués"
+        "kothGolems" => "Golems tués",
+        "win" => "Victoires"
     ];
     private $mlgrush = [
-        "played" => "Parties jouées",
         "timePlayed" => "Temps de jeu",
+        "played" => "Parties jouées",
         "win" => "Victoires",
-        "mlgrushPoints" => "Points marqués",
         "kills" => "Tués",
-        "mlgrushBlockPlace" => "Blocs posés",
+        "mlgrushPoints" => "Points marqués",
+        "mlgrushDefenses" => "Défense",
         "mlgrushBlockBreak" => "Blocs cassés",
-        "mlgrushDefenses" => "Défense"
+        "mlgrushBlockPlace" => "Blocs posés"
     ];
     private $moutron = [
-        "played" => "Parties jouées",
         "timePlayed" => "Temps de jeu",
+        "played" => "Parties jouées",
         "win" => "Victoires",
         "kills" => "Éliminations",
         "#bonusUsed" => "Bonus utilisés",
@@ -96,45 +96,46 @@ class GameStats {
         "#winmoutronFinale" => "Finales gagnées"
     ];
     private $pitchout = [
-        "played" => "Parties jouées",
         "timePlayed" => "Temps de jeu",
+        "played" => "Parties jouées",
         "win" => "Victoires",
         "ejections" => "Éjections",
-        "lifesLost" => "Vies perdues"
+        "lifesLost" => "Vies perdues",
+        "bonusUsed" => "Bonus utilisés"
     ];
     private $ploufcraft = [
-        "played" => "Parties jouées",
         "timePlayed" => "Temps de jeu",
+        "played" => "Parties jouées",
         "win" => "Victoires",
         "plouf_items_crafted" => "Items craftés",
         "plouf_unique_items_crafted" => "Items uniques craftés"
     ];
     private $runaway = [
-        "played" => "Parties jouées",
         "timePlayed" => "Temps de jeu",
-        "winsInfected" => "Victoires (Infecté)",
-        "winsSick" => "Victoires (Malade)",
-        "infections" => "Nombre de joueurs infectés",
+        "transformations" => "Succombations",
+        "played" => "Parties jouées",
         "timesInfected" => "Nombre de fois infecté",
         "timesSick" => "Nombre de fois malade",
-        "transformations" => "Succombations",
-        "bonusUsed" => "Bonus utilisés"
+        "infections" => "Nombre de joueurs infectés",
+        "bonusUsed" => "Bonus utilisés",
+        "winsSick" => "Victoires (Malade)",
+        "winsInfected" => "Victoires (Infecté)"
     ];
     private $sw = [
-        "played" => "Parties jouées",
         "timePlayed" => "Temps de jeu",
-        "win" => "Victoires",
         "kills" => "Tués",
-        "sheepLaunch" => "Moutons lancés",
         "sheepKilled" => "Moutons tués",
-        "swBonusUsed" => "Laines activées"
+        "played" => "Parties jouées",
+        "sheepLaunch" => "Moutons lancés",
+        "swBonusUsed" => "Laines activées",
+        "win" => "Victoires"
     ];
     private $tower = [
-        "played" => "Parties jouées",
         "timePlayed" => "Temps de jeu",
+        "played" => "Parties jouées",
         "win" => "Victoires",
-        "twPoints" => "Points marqués",
         "kills" => "Tués",
+        "twPoints" => "Points marqués",
         "twDefenses" => "Défense"
     ];
 
