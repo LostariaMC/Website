@@ -20,7 +20,8 @@ class GameStats {
         "ploufcraft" => "PloufCraft",
         "tower" => "Tower",
         "diecraft" => "Diecraft",
-        "arrow" => "Arrow"
+        "arrow" => "Arrow",
+        "boom" => "Boom"
     ];
 
     private $arrow = [
@@ -32,6 +33,12 @@ class GameStats {
         "arrow:arrowKills" => "Kills par flèche",
         "arrow:swordKills" => "Kills à l'épée",
         "arrow:bestStreak" => "Meilleure série"
+    ];
+    private $boom = [
+        "timePlayed" => "Temps de jeu",
+        "played" => "Parties jouées",
+        "win" => "Victoires",
+        "boomNumberBombs" => "Nombre de fois bombe"
     ];
     private $colorsplash = [
         "timePlayed" => "Temps de jeu",
@@ -152,6 +159,9 @@ class GameStats {
         switch($gameId){
             case "arrow":
                 return $this->arrow;
+
+            case "boom":
+                return $this->boom;
 
             case "colorsplash":
                 return $this->colorsplash;
