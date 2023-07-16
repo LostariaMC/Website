@@ -12,6 +12,10 @@ class LostariaPlayer {
         $this->lostariaRank = new LostariaRank();
     }
 
+    public function getName(){
+        return $this->redisPlayer['name'];
+    }
+
     public function getPoints(){
         return $this->redisPlayer['points'];
     }

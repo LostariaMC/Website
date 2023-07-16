@@ -33,11 +33,12 @@ function isTimeStat($statId){
                 $badges = $player->getBadges();
                 $stylePlayerName = "";
                 if(count($badges) > 0){
-                    $stylePlayerName = "margin-bottom: 5px; margin-top: 5px;";
+                    $stylePlayerName = "font-size: 2.5rem; font-weight: 500; line-height: 1.2; margin-bottom: 5px; margin-top: 5px;";
                 }else{
-                    $stylePlayerName = "margin-bottom: 5px; margin-top: 35px;";
+                    $stylePlayerName = "font-size: 2.5rem; font-weight: 500; line-height: 1.2; margin-bottom: 5px; margin-top: 35px;";
                 }
-                echo '<h1 style="'. $stylePlayerName .'" class="pb-0 '. $color .'">'. $player->getRank() . ' ' . $playerName .'</h1>';
+                echo '<p style="'. $stylePlayerName .'" class="pb-0 '. $color .'">'. $player->getRank() . ' ' . $playerName .'</p>';
+                echo '<h1 style="display: none;">Profil de ' .$playerName. '</h1>';
 
                 echo '<span>Expérience </span><span class="badge text-bg-success">'. $player->getPoints() .' / '. $player->getMaxPoints() .'</span>';
 

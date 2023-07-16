@@ -62,6 +62,7 @@ class Main extends Web {
         $redisPlayer = $this->redisModel->getOne("redisplayer:". $playerUuid);
         $playerObj = json_decode($redisPlayer, true);
         $player = new LostariaPlayer($playerObj);
+        $playerName = $player->getName();
 
         $sanction = "";
         if($this->redisModel->keyExist("sanctions.mute.". $playerUuid)){
