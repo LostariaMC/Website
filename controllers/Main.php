@@ -169,7 +169,7 @@ class Main extends Web {
         $achievementsInfos["story/smelt_iron"] = ["L'âge du fer", "https://fr-minecraft.net/popup_advancement.php?advancement=story.smelt_iron"];
         $achievementsInfos["story/upgrade_tools"] = ["Qualité supérieure", "https://fr-minecraft.net/popup_advancement.php?advancement=story.upgrade_tools"];
 
-        $this->header();
+        $this->header("Résultats Survie • Lostaria");
         include("views/common/survival.php");
         $this->footer();
     }
