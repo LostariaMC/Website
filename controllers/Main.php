@@ -170,7 +170,6 @@ class Main extends Web {
         $achievementsInfos["story/upgrade_tools"] = ["Qualité supérieure", "https://fr-minecraft.net/popup_advancement.php?advancement=story.upgrade_tools"];
 
         $this->header();
-        include("views/common/searchbar.php");
         include("views/common/survival.php");
         $this->footer();
     }
