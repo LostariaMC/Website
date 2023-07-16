@@ -15,7 +15,7 @@
                         ?>
                         <li style="margin-bottom: 30px;">
                             <section style="font-size: 1rem;">
-                                <h3 style="font-size: 1.5rem;"><?= $playerName ?> <span style="font-size: 1.25rem;">(<?= count($achievements) ?>)</span></h3>
+                                <h3 style="font-size: 1.5rem;"><?= $playerName ?> <span style="font-size: 1.25rem;">(<?= count($achievements) ?> succès)</span></h3>
                                 <div class="accordion" id="accordion<?= $playerName ?>">
                                     <div class="accordion-item">
                                         <p class="accordion-header">
