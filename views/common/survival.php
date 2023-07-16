@@ -19,7 +19,7 @@
                                 <div class="accordion" id="accordion<?= $playerName ?>">
                                     <div class="accordion-item">
                                         <p class="accordion-header">
-                                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse<?= $playerName ?>" aria-expanded="true" aria-controls="collapse<?= $playerName ?>">
+                                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse<?= $playerName ?>" aria-expanded="false" aria-controls="collapse<?= $playerName ?>">
                                                 Voir les succès réalisés
                                             </button>
                                         </p>
