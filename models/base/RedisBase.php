@@ -27,4 +27,9 @@ class RedisBase implements IDatabase
         $response = $this->redis->exists($key);
         return $response;
     }
+
+    public function getKeysWithPattern($pattern){
+        $response = $this->redis->keys($pattern);
+        return $response;
+    }
 }
