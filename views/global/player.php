@@ -380,7 +380,7 @@ function isTimeStat($statId){
                 
                 while ($builderDate != $currentDate) {
                     $day++;
-                    if ($day > 31) {
+                    if ($day > 31 - (($month == 2) ? 3 : (($month - 1) % 7 % 2))) { // https://stackoverflow.com/questions/22825409/most-concise-way-to-determine-number-of-days-in-a-month-with-java-using-boolean
                         $day = 1;
                         $month++;
                         if ($month > 12) {
