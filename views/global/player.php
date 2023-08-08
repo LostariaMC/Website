@@ -328,7 +328,7 @@ function isTimeStat($statId){
         },
         xAxis: {
             allowDecimals: false,
-            /*type: 'datetime',*/
+            type: 'datetime',
             labels: {
                 formatter: function () {
                     return this.value; // clean, unformatted number for year
@@ -347,7 +347,7 @@ function isTimeStat($statId){
             }
         },
         tooltip: {
-            pointFormat: '<?= $playerName ?> avait <b>{point.y:,.0f}</b> points d\'expériences'
+            pointFormat: '<?= $playerName ?> avait <b>{point.y:,.0f}</b> points d\'expérience'
         },
         plotOptions: {
             area: {
@@ -375,6 +375,9 @@ function isTimeStat($statId){
                 $dayStart = 0;
                 $currentDate = date("Y-m-d");
                 $builderDate = $year . '-' . ($month < 10 ? '0' . $month : $month) . '-' . ($day < 10 ? '0' . $day : $day);
+                
+                $lastRecExp = 0;
+                
                 while ($builderDate != $currentDate) {
                     $day++;
                     if ($day > 31) {
@@ -392,13 +395,16 @@ function isTimeStat($statId){
                             $monthStart = $month;
                             $yearStart = $year;
                         }
-                        echo $player->getExperienceHistoric()[$builderDate]. ', ';
+                        $lastRecExp = $player->getExperienceHistoric()[$builderDate];
+                    }
+                    if($lastRecExp != 0) {
+                        echo $lastRecExp . ", ";
                     }
                 }
                 ?>
             ],
-            /*pointStart: Date.UTC(<?= $yearStart ?>, <?= $monthStart - 1 ?>, <?= $dayStart ?>),
-            pointInterval: 24 * 3600 * 1000*/
+            pointStart: Date.UTC(<?= $yearStart ?>, <?= $monthStart - 1 ?>, <?= $dayStart ?>),
+            pointInterval: 24 * 3600 * 1000
         }]
     });
 </script>
