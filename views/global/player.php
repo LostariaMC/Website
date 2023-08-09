@@ -328,13 +328,7 @@ function isTimeStat($statId){
         },
         xAxis: {
             allowDecimals: false,
-            type: 'datetime',
-            labels: {
-                formatter: function () {
-                    return this.value; // clean, unformatted number for year
-                },
-                enabled: false
-            },
+            type: 'datetime'
         },
         yAxis: {
             title: {
@@ -344,13 +338,15 @@ function isTimeStat($statId){
                 formatter: function () {
                     return this.value;
                 }
-            }
+            },
+            min: 0,
+            max: 10000
         },
         tooltip: {
             pointFormat: '<?= $playerName ?> avait <b>{point.y:,.0f}</b> points d\'expérience'
         },
         plotOptions: {
-            area: {
+            series: {
                 marker: {
                     enabled: false,
                     symbol: 'circle',
@@ -360,7 +356,67 @@ function isTimeStat($statId){
                             enabled: true
                         }
                     }
-                }
+                },
+                zones: [{
+                        value: 100,
+                        className: "comete I",
+                        fillColor: "#FCF47E88"
+                    },
+                    {
+                        value: 500,
+                        className: "comete II",
+                        fillColor: "#f0e87888"
+                    },
+                    {
+                        value: 1000,
+                        className: "comete III",
+                        fillColor: "#e3db7188"
+                    },
+                    {
+                        value: 1400,
+                        className: "meteore I",
+                        fillColor: "#f3bd0f88"
+                    },
+                    {
+                        value: 2000,
+                        className: "meteore II",
+                        fillColor: "#e6b30e88"
+                    },
+                    {
+                        value: 2800,
+                        className: "meteore III",
+                        fillColor: "#d9a90d88"
+                    },
+                    {
+                        value: 3600,
+                        className: "etoile I",
+                        fillColor: "#62FFFB88"
+                    },
+                    {
+                        value: 5000,
+                        className: "etoile II",
+                        fillColor: "#5cf2ed88"
+                    },
+                    {
+                        value: 6200,
+                        className: "etoile III",
+                        fillColor: "#57e6e188"
+                    },
+                    {
+                        value: 7500,
+                        className: "cosmos I",
+                        fillColor: "#ED98F988"
+                    },
+                    {
+                        value: 8600,
+                        className: "cosmos II",
+                        fillColor: "#e291ed88"
+                    },
+                    {
+                        className: "cosmos III",
+                        fillColor: "#d689e088"
+                    }
+                ]
             }
         },
         series: [{
