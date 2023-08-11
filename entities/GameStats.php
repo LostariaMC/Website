@@ -14,6 +14,7 @@ class GameStats {
         "moutron" => "Moutron",
         "mlgrush" => "MLGRush",
         "pitchout" => "Pitchout",
+        "spleef" => "Spleef",
         "defense" => "Defense",
         "rn" => "Runaway",
         "sw" => "SheepWars",
@@ -128,6 +129,13 @@ class GameStats {
         "winsSick" => "Victoires (Malade)",
         "winsInfected" => "Victoires (Infecté)"
     ];
+    private $spleef = [
+        "timePlayed" => "Temps de jeu",
+        "played" => "Parties jouées",
+        "win" => "Victoires",
+        "lastSurvivor" => "Survivant",
+        "blocksBreak" => "Blocs cassés"
+    ];
     private $sw = [
         "timePlayed" => "Temps de jeu",
         "kills" => "Tués",
@@ -192,6 +200,9 @@ class GameStats {
 
             case "rn":
                 return $this->runaway;
+
+            case "spleef":
+                return $this->spleef;
 
             case "sw":
                 return $this->sw;
