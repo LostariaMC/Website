@@ -2,6 +2,9 @@
 
     <h4 style="margin: 20px">Membres de l'équipe :</h4>
     <?php
+
+    use entities\LostariaPlayer;
+
     $i = 0;
     foreach ($staffMembers as $p) {
         if ($i >= 2) {
@@ -17,7 +20,10 @@
             $competences = $competences . "<span style='margin-right: 3px' class=\"badge rounded-pill text-bg-primary text-light\">" . $c . "</span>";
         }
 
-        $staffName = \utils\MojangUtils::getName($p[0]);
+        $redisPlayer = $this->redisModel->getOne("redisplayer:". $p[0]);
+        $playerObj = json_decode($redisPlayer, true);
+        $player = new LostariaPlayer($playerObj);
+        $staffName = $player->getName();
 
         echo '
                 <div style="margin-left: 20px; margin-bottom: 20px;" class="card card-hover">
