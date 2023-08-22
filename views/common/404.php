@@ -78,17 +78,29 @@
                             array_push($quotes, "Le clou souffre autant que le trou");
                             array_push($quotes, "Une partie des esperluettes sont généralement indisponibles, quoique nécessaires");
                             array_push($quotes, "Les choux-fleurs sont en chaleur");
-                            array_push($quotes, "Les abricots sont très beau");
+                            array_push($quotes, "Les abricots sont très beaux");
                             array_push($quotes, "Les espagnolettes sont malades, on se demande pourquoi..");
                             array_push($quotes, "Jardiner, c'est comme faire du vélo");
                             array_push($quotes, "Comme un puma dans l'antarctique des éléphants");
-                            array_push($quotes, "Les échalottes sont patriotes");
+                            array_push($quotes, "Les échalotes sont patriotes");
                             array_push($quotes, "L'utilisation abusive de la souris est sanctionnée");
                             array_push($quotes, "Qui va la pêche à l'eau car la fin s'y casse");
                             array_push($quotes, "Les tortues inanimées se trouvent bien embêtées, et par géo-localisation");
                             array_push($quotes, "Si c'est cette fonte, rèze");
                             array_push($quotes, "Qu'est ce qu'un idiomatique ?");
                             array_push($quotes, "Un semblant de tartine ne fait pas de mal à un miroir, annonça-t-il");
+                            array_push($quotes, "Les esperluettes sont temporairement indisponibles");
+                            array_push($quotes, "Vous avez vu ?");
+                            array_push($quotes, "Pas de tartes à la crème ici");
+                            array_push($quotes, "Réessayez pour voir");
+                            array_push($quotes, "Cinquante-sept !");
+                            array_push($quotes, "Ce message vaut la peine d'être lu");
+                            array_push($quotes, "Papopipépo");
+                            array_push($quotes, "Qui donne, dire");
+                            array_push($quotes, "Séparez les blancs des jaunes et remettez-les ensemble");
+                            array_push($quotes, "Mais c'est génial ici !");
+                            array_push($quotes, "Bloup bloup. Oh, pardon");
+                            array_push($quotes, "Les pièces d'un euro ont deux faces quand même");
 
                             echo '<p style="font-style: italic;">'. $quotes[array_rand($quotes, 1)] .'</p>';
                             ?>
