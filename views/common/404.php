@@ -76,7 +76,6 @@
                             array_push($quotes, "Elle était si belle la poubelle");
                             array_push($quotes, "Les violoncelles s'attablèrent et firent du repas un avion");
                             array_push($quotes, "Le clou souffre autant que le trou");
-                            array_push($quotes, "Une partie des esperluettes sont généralement indisponibles, quoique nécessaires");
                             array_push($quotes, "Les choux-fleurs sont en chaleur");
                             array_push($quotes, "Les abricots sont très beaux");
                             array_push($quotes, "Les espagnolettes sont malades, on se demande pourquoi..");
