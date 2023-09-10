@@ -15,6 +15,7 @@ class GameStats {
         "mlgrush" => "MLGRush",
         "pitchout" => "Pitchout",
         "spleef" => "Spleef",
+        "teamfortress2" => "TeamFortress",
         "defense" => "Defense",
         "rn" => "Runaway",
         "sw" => "SheepWars",
@@ -145,6 +146,17 @@ class GameStats {
         "swBonusUsed" => "Laines activées",
         "win" => "Victoires"
     ];
+    private $teamfortress = [
+        "timePlayed" => "Temps de jeu",
+        "played" => "Parties jouées",
+        "win" => "Victoires",
+        "kills" => "Tués",
+        "deaths" => "Morts",
+        "damages" => "Dégâts",
+        "flagCaptureCount" => "Captures de drapeaux",
+        "pushTime" => "Temps de push",
+        "captureTime" => "Temps de capture"
+    ];
     private $tower = [
         "timePlayed" => "Temps de jeu",
         "played" => "Parties jouées",
@@ -206,6 +218,9 @@ class GameStats {
 
             case "sw":
                 return $this->sw;
+
+            case "teamfortress2":
+                return $this->teamfortress;
 
             case "tower":
                 return $this->tower;
