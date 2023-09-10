@@ -14,8 +14,12 @@
                 <p>jeux</p>
             </div>
             <div>
-                <p style="font-size: 2rem; margin-bottom: 0px;">+300</p>
+                <p style="font-size: 2rem; margin-bottom: 0px;">+350</p>
                 <p>joueurs inscrits</p>
+            </div>
+            <div>
+                <p style="font-size: 2rem; margin-bottom: 0px;">+5</p>
+                <p>ans d'existence</p>
             </div>
         </div>
     </div>
