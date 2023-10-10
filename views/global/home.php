@@ -2,13 +2,13 @@
 
     <div style="margin: 20px;">
         <h1>Bienvenue sur Lostaria !</h1>
-        <p style="margin-top: 20px;">D'origine une communauté de guildes du serveur Epicube, Lostaria est un serveur événementiel qui recréer les jeux qui nous ont rassemblés.</p>
+        <p style="margin-top: 20px;">D'origine une communauté de guildes du serveur Epicube, Lostaria est un serveur événementiel qui recrée les jeux qui nous ont rassemblés.</p>
         <p>En développement constant, Lostaria réunit aujourd'hui une petite communauté autour de ses jeux dans une ambiance amicale et de détente.</p>
     </div>
 
     <div style="margin: 20px;">
         <h2 style="margin-top: 50px;">Lostaria, c'est :</h2>
-        <div style="display: flex; justify-content: space-around; text-align: center; margin-top: 50px;">
+        <div class="" style="display: flex; justify-content: space-around; text-align: center; margin-top: 50px;">
             <div>
                 <p style="font-size: 2rem; margin-bottom: 0px;">+15</p>
                 <p>jeux</p>
