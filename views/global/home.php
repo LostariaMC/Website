@@ -8,7 +8,7 @@
 
     <div style="margin: 20px;">
         <h2 style="margin-top: 50px;">Lostaria, c'est :</h2>
-        <div class="" style="display: flex; justify-content: space-around; text-align: center; margin-top: 50px;">
+        <div class="details__stats" style="display: flex; justify-content: space-around; text-align: center; margin-top: 50px;">
             <div>
                 <p style="font-size: 2rem; margin-bottom: 0px;">+15</p>
                 <p>jeux</p>
@@ -79,6 +79,10 @@
 @media screen and (max-width: 490px) {
     .staff__description {
         display: none;
+    }
+
+    .details__stats {
+        flex-direction: column;
     }
 }
 
