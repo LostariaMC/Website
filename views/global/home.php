@@ -38,7 +38,7 @@
                 $i = 0;
             }
             if ($i == 0) {
-                echo '<div class="row">';
+                echo '<div style="display: flex; justify-content: center;">';
             }
 
             $competences = "";
@@ -52,7 +52,7 @@
             $staffName = $player->getName();
 
             echo '
-                <div style="margin-left: 20px; margin-bottom: 20px;" class="card card-hover">
+                <div style="margin-left: 20px; margin-bottom: 20px; width: 400px;" class="card card-hover">
                         <div class="card-body d-flex">
                             <div class="p-3">
                                 <img class="preview-image" src="' . \utils\HeadUtils::getHeadLink($p[0]) . '/100" alt="' . $staffName . ' avatar">
@@ -60,7 +60,6 @@
                             <div class="p-3 flex-grow-1">
                                 <h5 class="mb-1 pb-0">' . $staffName . '</h5>
                                 ' . $competences . '<br/>
-                                <p class="staff__description" style="margin-top: 10px;">'. $p[2] .'</p>
                                 <a style="margin-top: 10px;" href="./player?q=' . $staffName . '" class="btn btn-outline-primary">Voir le profil →</a>
                             </div>
                         </div>
