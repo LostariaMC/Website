@@ -38,7 +38,7 @@
                 $i = 0;
             }
             if ($i == 0) {
-                echo '<div style="display: flex; justify-content: center;">';
+                echo '<div class="staff" style="display: flex; justify-content: center;">';
             }
 
             $competences = "";
@@ -84,6 +84,11 @@
         flex-direction: column;
     }
 }
+
+@media screen and (max-width: 991px) {
+    .staff{
+        flex-direction: column;
+    }
 
 }
 </style>
