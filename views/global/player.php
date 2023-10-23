@@ -40,7 +40,7 @@ function isTimeStat($statId){
                 echo '<p style="'. $stylePlayerName .'" class="pb-0 '. $color .'">'. $player->getRank() . ' ' . $playerName .'</p>';
                 echo '<h1 style="display: none;">Profil de ' .$playerName. '</h1>';
 
-                echo '<span>Expérience </span><span class="badge text-bg-success">'. $player->getPoints() .' / '. $player->getMaxPoints() .'</span>';
+                echo '<span>Expérience </span><span class="badge text-bg-success">'. round($player->getPoints()) .' / '. $player->getMaxPoints() .'</span>';
 
                 if(count($badges) > 0){
                     echo '<div style="margin-top: 5px;">
