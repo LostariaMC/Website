@@ -22,6 +22,7 @@ class GameStats {
         "rn" => "Runaway",
         "sw" => "SheepWars",
         "spleef" => "Spleef",
+        "survivor" => "Survivor",
         "teamfortress2" => "TeamFortress",
         "tower" => "Tower",
     ];
@@ -137,6 +138,13 @@ class GameStats {
         "lastSurvivor" => "Survivant",
         "blocksBreak" => "Blocs cassés"
     ];
+    private $survivor = [
+        "timePlayed" => "Temps de jeu",
+        "played" => "Parties jouées",
+        "kills" => "Zombies tués",
+        "downfalls" => "Chutes au sol",
+        "deaths" => "Morts"
+    ];
     private $sw = [
         "timePlayed" => "Temps de jeu",
         "kills" => "Tués",
@@ -215,6 +223,9 @@ class GameStats {
 
             case "spleef":
                 return $this->spleef;
+
+            case "survivor":
+                return $this->survivor;
 
             case "sw":
                 return $this->sw;
