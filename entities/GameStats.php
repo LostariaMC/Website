@@ -8,22 +8,22 @@ class GameStats {
     private $redisModel;
 
     private $games = [
-        "koth2" => "KOTH",
+        "arrow" => "Arrow",
+        "boom" => "Boom",
         "colorsplash" => "ColorSplash",
-        "gravity" => "Gravity",
-        "moutron" => "Moutron",
-        "mlgrush" => "MLGRush",
-        "pitchout" => "Pitchout",
-        "spleef" => "Spleef",
-        "teamfortress2" => "TeamFortress",
         "defense" => "Defense",
+        "diecraft" => "Diecraft",
+        "gravity" => "Gravity",
+        "koth2" => "KOTH",
+        "mlgrush" => "MLGRush",
+        "moutron" => "Moutron",
+        "pitchout" => "Pitchout",
+        "ploufcraft" => "PloufCraft",
         "rn" => "Runaway",
         "sw" => "SheepWars",
-        "ploufcraft" => "PloufCraft",
+        "spleef" => "Spleef",
+        "teamfortress2" => "TeamFortress",
         "tower" => "Tower",
-        "diecraft" => "Diecraft",
-        "arrow" => "Arrow",
-        "boom" => "Boom"
     ];
 
     private $arrow = [
