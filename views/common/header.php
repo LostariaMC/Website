@@ -14,8 +14,8 @@
 
     <link rel="stylesheet" href="./public/style/main.css">
 
-    <link rel="icon" type="image/png" href="./public/images/LostariaLogo.png">
-    <meta property="og:image" content="./public/images/LostariaLogo.png">
+    <link rel="icon" type="image/png" href="./public/images/LostariaLogo2.png">
+    <meta property="og:image" content="./public/images/LostariaLogo2.png">
 
     <meta name="theme-color" content="#6477e6">
 
