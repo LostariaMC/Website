@@ -14,6 +14,7 @@ class GameStats {
         "defense" => "Defense",
         "diecraft" => "Diecraft",
         "gravity" => "Gravity",
+        "icerunner" => "IceRunner",
         "koth2" => "KOTH",
         "mlgrush" => "MLGRush",
         "moutron" => "Moutron",
@@ -75,6 +76,15 @@ class GameStats {
         "timePlayed" => "Temps de jeu",
         "played" => "Parties jouées",
         "win" => "Victoires"
+    ];
+    private $icerunner = [
+        "timePlayed" => "Temps de jeu",
+        "played" => "Parties jouées",
+        "win" => "Victoires",
+        "kills" => "Tués",
+        "deaths" => "Morts",
+        "custom1" => "Points apportés",
+        "custom2" => "Or recoltés",
     ];
     private $koth = [
         "timePlayed" => "Temps de jeu",
@@ -202,6 +212,9 @@ class GameStats {
 
             case "gravity":
                 return $this->gravity;
+
+            case "icerunner":
+                return $this->icerunner;
 
             case "koth2":
                 return $this->koth;
