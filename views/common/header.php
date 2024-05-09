@@ -42,17 +42,58 @@
         gtag('config', 'G-DQH14YJE51');
     </script>
 
+    <style>
+        .server-address {
+            position: relative;
+            color: #807be4;
+            cursor: pointer;
+            transition: transform 0.2s ease-in-out, color 0.3s ease-in-out;
+       }
+
+        .server-address:hover {
+            color: #687ce4;
+        }
+
+        .server-address:after {
+            content: "(Adresse copiée !)";
+            margin-left: 4px;
+            color: #198754;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            white-space: nowrap;
+        }
+
+        .server-address.copied:after {
+            opacity: 1;
+        }
+    </style>
 </head>
 
 <body class="<?= isset($_GET['id']) ? 'brick' : '' ?>">
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container-fluid">
-            <a class="navbar-brand" href="./"><img src="./public/images/LostariaLogo2.png" height="50" width="50" /> </a>
+            <span>
+                <a class="navbar-brand" href="./"><img src="./public/images/LostariaLogo2.png" height="50" width="50" /> </a>
+                <span class="server-address">play.lostaria.fr</span>
+            </span>
             <ul class="navbar-nav flex-row ml-md-auto d-none d-md-flex flex-grow justify-content-end flex-grow p-2">
                 <a href="./survival" class="btn btn-outline-light">Résultats Survie</a>
                 <a href="https://github.com/LostariaMC" target="_blank" class="btn btn-outline-light" style="margin-left: 10px;">Open source</a>
                 <a href="https://shop.lostaria.fr" target="_blank" class="btn btn-outline-light" style="margin-left: 10px;">Boutique</a>
-                <a href="https://status.lostaria.fr" target="_blank" class="btn btn-outline-light" style="margin-left: 10px;">Etat des services</a>
+                <a href="https://status.lostaria.fr" target="_blank" class="btn btn-outline-light" style="margin-left: 10px;">État des services</a>
             </ul>
         </div>
     </nav>
+<script>
+    document.querySelectorAll('.server-address').forEach(serverAddress => {
+        serverAddress.addEventListener('click', () => {
+            navigator.clipboard.writeText("play.lostaria.fr")
+                .then(() => {
+                    serverAddress.classList.add('copied');
+                    setTimeout(() => {
+                        serverAddress.classList.remove('copied');
+                    }, 1000);
+                });
+        });
+    });
+</script>
