@@ -11,9 +11,11 @@ class GameStats {
         "arrow" => "Arrow",
         "boom" => "Boom",
         "colorsplash" => "ColorSplash",
+        "conquest" => "Conquest",
         "defense" => "Defense",
         "diecraft" => "Diecraft",
         "gravity" => "Gravity",
+        "heroes" => "Heroes",
         "icerunner" => "IceRunner",
         "koth2" => "KOTH",
         "mlgrush" => "MLGRush",
@@ -22,9 +24,11 @@ class GameStats {
         "ploufcraft" => "PloufCraft",
         "rn" => "Runaway",
         "sw" => "SheepWars",
+        "shootcraft" => "ShootCraft",
         "spleef" => "Spleef",
         "survivor" => "Survivor",
         "teamfortress2" => "TeamFortress",
+        "totem" => "Totem",
         "tower" => "Tower",
     ];
 
@@ -53,6 +57,15 @@ class GameStats {
         "cs_care" => "Vies soignées",
         "win" => "Victoires"
     ];
+    private $conquest = [
+        "timePlayed" => "Temps de jeu",
+        "played" => "Parties jouées",
+        "kills" => "Tués",
+        "deaths" => "Morts",
+        "blockPlace" => "Blocs placés",
+        "custom1" => "Projectiles lancés",
+        "win" => "Victoires"
+    ];
     private $defense = [
         "timePlayed" => "Temps de jeu",
         "played" => "Parties jouées",
@@ -76,6 +89,11 @@ class GameStats {
         "timePlayed" => "Temps de jeu",
         "played" => "Parties jouées",
         "win" => "Victoires"
+    ];
+    private $heroes = [
+        "timePlayed" => "Temps de jeu",
+        "played" => "Parties jouées",
+        "custom1" => "Tour max atteint"
     ];
     private $icerunner = [
         "timePlayed" => "Temps de jeu",
@@ -141,6 +159,21 @@ class GameStats {
         "winsSick" => "Victoires (Malade)",
         "winsInfected" => "Victoires (Infecté)"
     ];
+    private $sw = [
+        "timePlayed" => "Temps de jeu",
+        "kills" => "Tués",
+        "sheepKilled" => "Moutons tués",
+        "played" => "Parties jouées",
+        "sheepLaunch" => "Moutons lancés",
+        "swBonusUsed" => "Laines activées",
+        "win" => "Victoires"
+    ];
+    private $shootcraft = [
+        "timePlayed" => "Temps de jeu",
+        "played" => "Parties jouées",
+        "kills" => "Tués",
+        "win" => "Victoires"
+    ];
     private $spleef = [
         "timePlayed" => "Temps de jeu",
         "played" => "Parties jouées",
@@ -155,15 +188,6 @@ class GameStats {
         "downfalls" => "Chutes au sol",
         "deaths" => "Morts"
     ];
-    private $sw = [
-        "timePlayed" => "Temps de jeu",
-        "kills" => "Tués",
-        "sheepKilled" => "Moutons tués",
-        "played" => "Parties jouées",
-        "sheepLaunch" => "Moutons lancés",
-        "swBonusUsed" => "Laines activées",
-        "win" => "Victoires"
-    ];
     private $teamfortress = [
         "timePlayed" => "Temps de jeu",
         "played" => "Parties jouées",
@@ -174,6 +198,16 @@ class GameStats {
         "flagCaptureCount" => "Captures de drapeaux",
         "pushTime" => "Temps de push",
         "captureTime" => "Temps de capture"
+    ];
+    private $totem = [
+        "timePlayed" => "Temps de jeu",
+        "played" => "Parties jouées",
+        "win" => "Victoires",
+        "kills" => "Tués",
+        "assists" => "Assistances",
+        "deaths" => "Morts",
+        "defenses" => "Défense",
+        "custom1" => "Obsidiennes minées"
     ];
     private $tower = [
         "timePlayed" => "Temps de jeu",
@@ -204,6 +238,9 @@ class GameStats {
             case "colorsplash":
                 return $this->colorsplash;
 
+            case "conquest":
+                return $this->conquest;
+
             case "defense":
                 return $this->defense;
 
@@ -212,6 +249,9 @@ class GameStats {
 
             case "gravity":
                 return $this->gravity;
+
+            case "heroes":
+                return $this->heroes;
 
             case "icerunner":
                 return $this->icerunner;
@@ -234,17 +274,23 @@ class GameStats {
             case "rn":
                 return $this->runaway;
 
+            case "sw":
+                return $this->sw;
+
+            case "shootcraft":
+                return $this->shootcraft;
+
             case "spleef":
                 return $this->spleef;
 
             case "survivor":
                 return $this->survivor;
 
-            case "sw":
-                return $this->sw;
-
             case "teamfortress2":
                 return $this->teamfortress;
+
+            case "totem":
+                return $this->totem;
 
             case "tower":
                 return $this->tower;
