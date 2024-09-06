@@ -24,6 +24,7 @@ class Main extends Web {
             ["e272b935-1500-40a8-b79d-6f5844f1bc9d", ["Développeur", "Constructeur"], "D'une passion incontestable pour les maths, XEL0 réunit théorèmes et manuels pour construire les maps de vos rêves ! Il est notamment à l'origine de la réalisation du hub."], // XEL0
             ["938e86bd-5d16-49d4-b26a-6775036d744e", ["Développeuse"], "Convaincue que le hub soit un véritable terrain de jeux, ElloWorld est à l'origine du développement de la discothèque, de la pêche, et du dé à coudre."], // ElloWorld
             ["beb88774-a96c-4553-8379-c42c75395af7", ["Développeur"], "lumin0u intervient sur le développement de Lostaria depuis 2 ans. Il a notamment développé quelques jeux, comme le Arrow et le PloufCraft !"], // lumin0u
+            ["88baaec2-3fe1-40e5-8fb4-d67134fd5c1c", ["Gest Évènements"], ""], // Luma1y
         );
 
         $error = false;
