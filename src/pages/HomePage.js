@@ -1,10 +1,14 @@
 import styles from "../styles/pages/Home.module.scss";
+import Header from "../components/Header";
 
 const HomePage = () => {
   return (
-    <main>
-      <p>Hello world !</p>
-    </main>
+    <>
+      <Header />
+      <main>
+        <p>Hello world !</p>
+      </main>
+    </>
   );
 };
 
