@@ -179,7 +179,6 @@
   }
 }
 
-// Animation au scroll
 @keyframes fadeInDown {
   from {
     opacity: 0;
@@ -193,22 +192,4 @@
 
 .header {
   animation: fadeInDown 0.6s ease-out;
-}
-
-// Responsive
-@media (max-width: 768px) {
-  .container {
-    padding: 0 1rem;
-    height: 60px;
-  }
-
-  .logo .logoImg {
-    height: 35px;
-  }
-}
-
-@media (max-width: 480px) {
-  .container {
-    padding: 0 0.5rem;
-  }
 }
