@@ -1,6 +1,6 @@
-# Soon Landing Page
+# Website
 
-This project is a web landing page, based on React
+This project is based on React
 
 ## Requirements
 
