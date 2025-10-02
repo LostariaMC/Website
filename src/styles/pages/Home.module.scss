@@ -1,11 +1,10 @@
 @import "../mixins";
 
 .main {
-  padding-top: 70px; // Compense la hauteur du header fixe
+  padding-top: 70px;
   min-height: 100vh;
 }
 
-// Hero Section
 .hero {
   min-height: 100vh;
   display: flex;
@@ -86,45 +85,6 @@
 
   @media (max-width: 640px) {
     flex-direction: column;
-  }
-}
-
-.primaryButton {
-  background: linear-gradient(135deg, #9978f6 0%, #8b68e8 100%);
-  color: white;
-  border: none;
-  padding: 1rem 2rem;
-  border-radius: 50px;
-  font-weight: 600;
-  font-size: 1.1rem;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  transition: all 0.3s ease;
-  box-shadow: 0 8px 25px rgba(153, 120, 246, 0.3);
-
-  &:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 12px 35px rgba(153, 120, 246, 0.4);
-  }
-}
-
-.secondaryButton {
-  background: transparent;
-  color: #9978f6;
-  border: 2px solid #9978f6;
-  padding: 1rem 2rem;
-  border-radius: 50px;
-  font-weight: 600;
-  font-size: 1.1rem;
-  cursor: pointer;
-  transition: all 0.3s ease;
-
-  &:hover {
-    background: #9978f6;
-    color: white;
-    transform: translateY(-3px);
   }
 }
 

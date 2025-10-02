@@ -1,5 +1,6 @@
 import styles from "../styles/pages/Home.module.scss";
-import Header from "../components/Header";
+import Header from "../components/layout/Header";
+import RoundedButton from "../components/pures/RoundedButton";
 
 const HomePage = () => {
   return (
@@ -18,13 +19,11 @@ const HomePage = () => {
                 amicale et de détente.
               </p>
               <div className={styles.heroButtons}>
-                <button className={styles.primaryButton}>
+                <RoundedButton>
                   <span className={styles.buttonIcon}>⚡</span>
                   Rejoindre le serveur
-                </button>
-                <button className={styles.secondaryButton}>
-                  Découvrir les modes
-                </button>
+                </RoundedButton>
+                <RoundedButton secondary>Découvrir les modes</RoundedButton>
               </div>
               <div className={styles.serverInfo}>
                 <div className={styles.infoItem}>
@@ -33,7 +32,7 @@ const HomePage = () => {
                 </div>
                 <div className={styles.infoDivider}></div>
                 <div className={styles.infoItem}>
-                  <span className={styles.infoValue}>play.monserveur.fr</span>
+                  <span className={styles.infoValue}>play.lostaria.fr</span>
                   <span className={styles.infoLabel}>Adresse du serveur</span>
                 </div>
               </div>
